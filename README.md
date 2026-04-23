@@ -54,11 +54,11 @@ Desarrollar una aplicación gráfica que permita representar figuras geométrica
 ## Ejecución del Proyecto
 
 1. Clonar el repositorio:
-git clone https://github.com/tu-usuario/tu-repo.git
+   Usar comando git clone
 
-2. Abrir el proyecto en Visual Studio.
+3. Abrir el proyecto en Visual Studio.
 
-3. Ejecutar la solución con F5.
+4. Ejecutar la solución con F5.
 
 ---
 
