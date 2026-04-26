@@ -14,6 +14,8 @@ namespace Figuras_2D
         private FrmCircle()
         {
             InitializeComponent();
+            btnGraficar.Click += btnGraficar_Click;
+            PanelGrafico.Paint += PanelGrafico_Paint;
         }
 
         public static FrmCircle Instancia

@@ -70,7 +70,7 @@
             // 
             this.txtRadio.Location = new System.Drawing.Point(131, 55);
             this.txtRadio.Name = "txtRadio";
-            this.txtRadio.Size = new System.Drawing.Size(39, 22);
+            this.txtRadio.Size = new System.Drawing.Size(52, 22);
             this.txtRadio.TabIndex = 4;
             // 
             // btnGraficar
@@ -94,7 +94,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(166, 58);
+            this.label4.Location = new System.Drawing.Point(189, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 16);
             this.label4.TabIndex = 7;
