@@ -72,8 +72,8 @@
             this.miFigurasIrregularesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(690, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -124,42 +124,42 @@
             // miSquareToolStripMenuItem
             // 
             this.miSquareToolStripMenuItem.Name = "miSquareToolStripMenuItem";
-            this.miSquareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miSquareToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.miSquareToolStripMenuItem.Text = "Square";
             this.miSquareToolStripMenuItem.Click += new System.EventHandler(this.miSquareToolStripMenuItem_Click);
             // 
             // miRectangleToolStripMenuItem
             // 
             this.miRectangleToolStripMenuItem.Name = "miRectangleToolStripMenuItem";
-            this.miRectangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miRectangleToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.miRectangleToolStripMenuItem.Text = "Rectangle";
             this.miRectangleToolStripMenuItem.Click += new System.EventHandler(this.miRectangleToolStripMenuItem_Click);
             // 
             // miTrapeziumToolStripMenuItem
             // 
             this.miTrapeziumToolStripMenuItem.Name = "miTrapeziumToolStripMenuItem";
-            this.miTrapeziumToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miTrapeziumToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.miTrapeziumToolStripMenuItem.Text = "Trapezium";
             this.miTrapeziumToolStripMenuItem.Click += new System.EventHandler(this.miTrapeziumToolStripMenuItem_Click);
             // 
             // miParallelogramToolStripMenuItem
             // 
             this.miParallelogramToolStripMenuItem.Name = "miParallelogramToolStripMenuItem";
-            this.miParallelogramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miParallelogramToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.miParallelogramToolStripMenuItem.Text = "Parallelogram";
             this.miParallelogramToolStripMenuItem.Click += new System.EventHandler(this.miParallelogramToolStripMenuItem_Click);
             // 
             // miRhombusToolStripMenuItem
             // 
             this.miRhombusToolStripMenuItem.Name = "miRhombusToolStripMenuItem";
-            this.miRhombusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miRhombusToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.miRhombusToolStripMenuItem.Text = "Rhombus";
             this.miRhombusToolStripMenuItem.Click += new System.EventHandler(this.miRhombusToolStripMenuItem_Click);
             // 
             // miKiteToolStripMenuItem
             // 
             this.miKiteToolStripMenuItem.Name = "miKiteToolStripMenuItem";
-            this.miKiteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miKiteToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.miKiteToolStripMenuItem.Text = "Kite";
             this.miKiteToolStripMenuItem.Click += new System.EventHandler(this.miKiteToolStripMenuItem_Click);
             // 
@@ -176,21 +176,21 @@
             // miTriangleToolStripMenuItem
             // 
             this.miTriangleToolStripMenuItem.Name = "miTriangleToolStripMenuItem";
-            this.miTriangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miTriangleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.miTriangleToolStripMenuItem.Text = "Triangle";
             this.miTriangleToolStripMenuItem.Click += new System.EventHandler(this.miTriangleToolStripMenuItem_Click);
             // 
             // miRightTriangleToolStripMenuItem
             // 
             this.miRightTriangleToolStripMenuItem.Name = "miRightTriangleToolStripMenuItem";
-            this.miRightTriangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miRightTriangleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.miRightTriangleToolStripMenuItem.Text = "Right Triangle";
             this.miRightTriangleToolStripMenuItem.Click += new System.EventHandler(this.miRightTriangleToolStripMenuItem_Click);
             // 
             // miScaleneTriangleToolStripMenuItem
             // 
             this.miScaleneTriangleToolStripMenuItem.Name = "miScaleneTriangleToolStripMenuItem";
-            this.miScaleneTriangleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miScaleneTriangleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.miScaleneTriangleToolStripMenuItem.Text = "Scalene Triangle";
             this.miScaleneTriangleToolStripMenuItem.Click += new System.EventHandler(this.miScaleneTriangleToolStripMenuItem_Click);
             // 
@@ -210,42 +210,42 @@
             // miPentagonToolStripMenuItem
             // 
             this.miPentagonToolStripMenuItem.Name = "miPentagonToolStripMenuItem";
-            this.miPentagonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miPentagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.miPentagonToolStripMenuItem.Text = "Pentagon";
             this.miPentagonToolStripMenuItem.Click += new System.EventHandler(this.miPentagonToolStripMenuItem_Click);
             // 
             // miHexagonToolStripMenuItem
             // 
             this.miHexagonToolStripMenuItem.Name = "miHexagonToolStripMenuItem";
-            this.miHexagonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miHexagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.miHexagonToolStripMenuItem.Text = "Hexagon";
             this.miHexagonToolStripMenuItem.Click += new System.EventHandler(this.miHexagonToolStripMenuItem_Click);
             // 
             // miHeptagonToolStripMenuItem
             // 
             this.miHeptagonToolStripMenuItem.Name = "miHeptagonToolStripMenuItem";
-            this.miHeptagonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miHeptagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.miHeptagonToolStripMenuItem.Text = "Heptagon";
             this.miHeptagonToolStripMenuItem.Click += new System.EventHandler(this.miHeptagonToolStripMenuItem_Click);
             // 
             // miOctagonToolStripMenuItem
             // 
             this.miOctagonToolStripMenuItem.Name = "miOctagonToolStripMenuItem";
-            this.miOctagonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miOctagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.miOctagonToolStripMenuItem.Text = "Octagon";
             this.miOctagonToolStripMenuItem.Click += new System.EventHandler(this.miOctagonToolStripMenuItem_Click);
             // 
             // miNonagonToolStripMenuItem
             // 
             this.miNonagonToolStripMenuItem.Name = "miNonagonToolStripMenuItem";
-            this.miNonagonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miNonagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.miNonagonToolStripMenuItem.Text = "Nonagon";
             this.miNonagonToolStripMenuItem.Click += new System.EventHandler(this.miNonagonToolStripMenuItem_Click);
             // 
             // miDecagonToolStripMenuItem
             // 
             this.miDecagonToolStripMenuItem.Name = "miDecagonToolStripMenuItem";
-            this.miDecagonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miDecagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.miDecagonToolStripMenuItem.Text = "Decagon";
             this.miDecagonToolStripMenuItem.Click += new System.EventHandler(this.miDecagonToolStripMenuItem_Click);
             // 
@@ -265,53 +265,53 @@
             // miStarToolStripMenuItem
             // 
             this.miStarToolStripMenuItem.Name = "miStarToolStripMenuItem";
-            this.miStarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miStarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.miStarToolStripMenuItem.Text = "Star";
             this.miStarToolStripMenuItem.Click += new System.EventHandler(this.miStarToolStripMenuItem_Click);
             // 
             // miHeartToolStripMenuItem
             // 
             this.miHeartToolStripMenuItem.Name = "miHeartToolStripMenuItem";
-            this.miHeartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miHeartToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.miHeartToolStripMenuItem.Text = "Heart";
             this.miHeartToolStripMenuItem.Click += new System.EventHandler(this.miHeartToolStripMenuItem_Click);
             // 
             // miCrescentToolStripMenuItem
             // 
             this.miCrescentToolStripMenuItem.Name = "miCrescentToolStripMenuItem";
-            this.miCrescentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miCrescentToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.miCrescentToolStripMenuItem.Text = "Crescent";
             this.miCrescentToolStripMenuItem.Click += new System.EventHandler(this.miCrescentToolStripMenuItem_Click);
             // 
             // miCrossToolStripMenuItem
             // 
             this.miCrossToolStripMenuItem.Name = "miCrossToolStripMenuItem";
-            this.miCrossToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miCrossToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.miCrossToolStripMenuItem.Text = "Cross";
             this.miCrossToolStripMenuItem.Click += new System.EventHandler(this.miCrossToolStripMenuItem_Click);
             // 
             // miPieToolStripMenuItem
             // 
             this.miPieToolStripMenuItem.Name = "miPieToolStripMenuItem";
-            this.miPieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miPieToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.miPieToolStripMenuItem.Text = "Pie";
             this.miPieToolStripMenuItem.Click += new System.EventHandler(this.miPieToolStripMenuItem_Click);
             // 
             // miArrowToolStripMenuItem
             // 
             this.miArrowToolStripMenuItem.Name = "miArrowToolStripMenuItem";
-            this.miArrowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miArrowToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.miArrowToolStripMenuItem.Text = "Arrow";
             this.miArrowToolStripMenuItem.Click += new System.EventHandler(this.miArrowToolStripMenuItem_Click);
             // 
             // FrmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 535);
+            this.ClientSize = new System.Drawing.Size(1924, 1181);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
