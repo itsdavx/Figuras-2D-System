@@ -45,7 +45,7 @@ namespace Figuras_2D
             PanelGrafico.Width = ancho + 20;
             PanelGrafico.Height = alto + 20;
 
-            elipse = new Ellipse(10, 10, ancho, alto, new Pen(Color.Black, 2), new SolidBrush(Color.Blue));
+            elipse = new Ellipse(10, 10, ancho, alto, new Pen(Color.Black, 2), new SolidBrush(Color.Purple));
             PanelGrafico.Invalidate();
         }
 

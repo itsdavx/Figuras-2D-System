@@ -203,6 +203,7 @@
     <Compile Include="Shapes\Circle.cs" />
     <Compile Include="Shapes\Ellipse.cs" />
     <Compile Include="Shapes\Parallelogram.cs" />
+    <Compile Include="Shapes\Rhombus.cs" />
     <Compile Include="Shapes\Shape.cs" />
     <EmbeddedResource Include="FrmArrow.resx">
       <DependentUpon>FrmArrow.cs</DependentUpon>
