@@ -36,8 +36,8 @@ namespace Figuras_2D
                 return;
 
             // Convertir cm a px
-            float eje1Px = eje1Cm * 49f;
-            float eje2Px = eje2Cm * 49f;
+            float eje1Px = eje1Cm * 58f;
+            float eje2Px = eje2Cm * 58f;
 
             int ancho = (int)eje1Px;
             int alto = (int)eje2Px;
@@ -45,9 +45,7 @@ namespace Figuras_2D
             PanelGrafico.Width = ancho + 20;
             PanelGrafico.Height = alto + 20;
 
-            elipse = new Ellipse(10, 10, ancho, alto,
-                new Pen(Color.Black, 2),
-                new SolidBrush(Color.Blue));
+            elipse = new Ellipse(10, 10, ancho, alto, new Pen(Color.Black, 2), new SolidBrush(Color.Blue));
             PanelGrafico.Invalidate();
         }
 

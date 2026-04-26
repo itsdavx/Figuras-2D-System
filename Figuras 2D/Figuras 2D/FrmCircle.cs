@@ -36,7 +36,7 @@ namespace Figuras_2D
                 return;
 
             // Convertir cm a px
-            float radioPx = radioCm * 49f;
+            float radioPx = radioCm * 58f;
             int diametroPx = (int)(radioPx * 2);
 
             PanelGrafico.Width = diametroPx + 20;
