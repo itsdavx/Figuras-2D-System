@@ -28,5 +28,86 @@ namespace Figuras_2D
                 return instancia;
             }
         }
+
+        private bool ValidarLado(out float lado)
+        {
+            lado = 0;
+
+            if (!float.TryParse(txtLado.Text, out lado))
+            {
+                MessageBox.Show("Ingrese un valor numérico válido");
+                return false;
+            }
+
+            if (lado <= 0)
+            {
+                MessageBox.Show("El lado debe ser positivo");
+                return false;
+            }
+
+            return true;
+        }
+
+        float ladoOctagono;
+        float tamanoPx;
+        bool dibujar = false;
+        int n = 8;
+
+        private void btnGraficar_Click(object sender, EventArgs e)
+        {
+            if (!ValidarLado(out ladoOctagono))
+            {
+                dibujar = false;
+                panelGrafico.Invalidate();
+                return;
+            }
+
+            float ladoPx = ladoOctagono * 58f;
+
+            float R = (float)(ladoPx / (2 * Math.Sin(Math.PI / n)));
+
+            tamanoPx = 2 * R;
+
+            panelGrafico.Width = (int)tamanoPx + 20;
+            panelGrafico.Height = (int)tamanoPx + 20;
+
+            dibujar = true;
+            panelGrafico.Invalidate();
+        }
+
+        private void panelGrafico_Paint(object sender, PaintEventArgs e)
+        {
+            if (!dibujar) return;
+
+            Graphics g = e.Graphics;
+
+            float ladoPx = ladoOctagono * 58f;
+
+            float R = (float)(ladoPx / (2 * Math.Sin(Math.PI / n)));
+
+            float cx = panelGrafico.Width / 2f;
+            float cy = panelGrafico.Height / 2f;
+
+            PointF[] puntos = new PointF[n];
+
+            float anguloInicial = (float)(-Math.PI / 2);
+
+            for (int i = 0; i < n; i++)
+            {
+                float angulo = anguloInicial + i * (2 * (float)Math.PI / n);
+
+                float x = cx + R * (float)Math.Cos(angulo);
+                float y = cy + R * (float)Math.Sin(angulo);
+
+                puntos[i] = new PointF(x, y);
+            }
+
+            using (Pen lapiz = new Pen(Color.Black, 2))
+            using (Brush brocha = new SolidBrush(Color.PeachPuff))
+            {
+                g.FillPolygon(brocha, puntos);
+                g.DrawPolygon(lapiz, puntos);
+            }
+        }
     }
 }
