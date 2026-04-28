@@ -73,7 +73,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,27 +84,28 @@
             this.miEllipseToolStripMenuItem,
             this.miOvalToolStripMenuItem});
             this.miFigurasCurvasToolStripMenuItem.Name = "miFigurasCurvasToolStripMenuItem";
-            this.miFigurasCurvasToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.miFigurasCurvasToolStripMenuItem.Text = "Figuras Curvas";
+            this.miFigurasCurvasToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.miFigurasCurvasToolStripMenuItem.Text = "Curved Shapes";
+            this.miFigurasCurvasToolStripMenuItem.Click += new System.EventHandler(this.miFigurasCurvasToolStripMenuItem_Click);
             // 
             // miCircleToolStripMenuItem
             // 
             this.miCircleToolStripMenuItem.Name = "miCircleToolStripMenuItem";
-            this.miCircleToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.miCircleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miCircleToolStripMenuItem.Text = "Circle";
             this.miCircleToolStripMenuItem.Click += new System.EventHandler(this.miCircleToolStripMenuItem_Click);
             // 
             // miEllipseToolStripMenuItem
             // 
             this.miEllipseToolStripMenuItem.Name = "miEllipseToolStripMenuItem";
-            this.miEllipseToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.miEllipseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miEllipseToolStripMenuItem.Text = "Ellipse";
             this.miEllipseToolStripMenuItem.Click += new System.EventHandler(this.miEllipseToolStripMenuItem_Click);
             // 
             // miOvalToolStripMenuItem
             // 
             this.miOvalToolStripMenuItem.Name = "miOvalToolStripMenuItem";
-            this.miOvalToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.miOvalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miOvalToolStripMenuItem.Text = "Oval";
             this.miOvalToolStripMenuItem.Click += new System.EventHandler(this.miOvalToolStripMenuItem_Click);
             // 
@@ -118,8 +119,8 @@
             this.miRhombusToolStripMenuItem,
             this.miKiteToolStripMenuItem});
             this.miCuadrilaterosToolStripMenuItem.Name = "miCuadrilaterosToolStripMenuItem";
-            this.miCuadrilaterosToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
-            this.miCuadrilaterosToolStripMenuItem.Text = "Cuadrilateros";
+            this.miCuadrilaterosToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.miCuadrilaterosToolStripMenuItem.Text = "Quadrilaterals";
             // 
             // miSquareToolStripMenuItem
             // 
@@ -170,8 +171,8 @@
             this.miRightTriangleToolStripMenuItem,
             this.miScaleneTriangleToolStripMenuItem});
             this.miTriangulosToolStripMenuItem.Name = "miTriangulosToolStripMenuItem";
-            this.miTriangulosToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.miTriangulosToolStripMenuItem.Text = "Triangulos";
+            this.miTriangulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.miTriangulosToolStripMenuItem.Text = "Triangles";
             // 
             // miTriangleToolStripMenuItem
             // 
@@ -204,8 +205,8 @@
             this.miNonagonToolStripMenuItem,
             this.miDecagonToolStripMenuItem});
             this.miPoligonosRegularesToolStripMenuItem.Name = "miPoligonosRegularesToolStripMenuItem";
-            this.miPoligonosRegularesToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
-            this.miPoligonosRegularesToolStripMenuItem.Text = "Poligonos Regulares";
+            this.miPoligonosRegularesToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.miPoligonosRegularesToolStripMenuItem.Text = "Regular Polygons";
             // 
             // miPentagonToolStripMenuItem
             // 
@@ -259,8 +260,8 @@
             this.miPieToolStripMenuItem,
             this.miArrowToolStripMenuItem});
             this.miFigurasIrregularesToolStripMenuItem.Name = "miFigurasIrregularesToolStripMenuItem";
-            this.miFigurasIrregularesToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.miFigurasIrregularesToolStripMenuItem.Text = "Figuras Irregulares";
+            this.miFigurasIrregularesToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.miFigurasIrregularesToolStripMenuItem.Text = "Irregular Shapes";
             // 
             // miStarToolStripMenuItem
             // 
@@ -307,7 +308,7 @@
             // FrmHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1924, 1181);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
