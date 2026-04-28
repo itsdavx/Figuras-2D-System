@@ -17,10 +17,6 @@ namespace Figuras_2D
         private double baseMayorDibujo = 0;
         private double baseMenorDibujo = 0;
         private double alturaDibujo = 0;
-        private double ladoIzquierdoDibujo = 0;
-        private double ladoDerechoDibujo = 0;
-        private double perimetroDibujo = 0;
-        private double areaDibujo = 0;
 
         public FrmTrapezium()
         {

@@ -72,7 +72,7 @@
             // 
             this.pnlGrafico.Location = new System.Drawing.Point(436, 25);
             this.pnlGrafico.Name = "pnlGrafico";
-            this.pnlGrafico.Size = new System.Drawing.Size(318, 293);
+            this.pnlGrafico.Size = new System.Drawing.Size(453, 293);
             this.pnlGrafico.TabIndex = 67;
             this.pnlGrafico.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrafico_Paint);
             // 
@@ -266,7 +266,7 @@
             this.Controls.Add(this.lblBaseMenor);
             this.Controls.Add(this.lblBaseMayor);
             this.Controls.Add(this.lblEntradas);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmTrapezium";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trapezium";

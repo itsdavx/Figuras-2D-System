@@ -32,7 +32,7 @@
             this.lblGrafico = new System.Windows.Forms.Label();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.txtPerimetro = new System.Windows.Forms.TextBox();
-            this.txtLado = new System.Windows.Forms.TextBox();
+            this.txtRadio = new System.Windows.Forms.TextBox();
             this.lblArea = new System.Windows.Forms.Label();
             this.lblPerimetro = new System.Windows.Forms.Label();
             this.lblSalida = new System.Windows.Forms.Label();
@@ -40,10 +40,10 @@
             this.btnResetear = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.lblProceso = new System.Windows.Forms.Label();
-            this.lblLado = new System.Windows.Forms.Label();
+            this.lblRadio = new System.Windows.Forms.Label();
             this.lblEntradas = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblAngulo = new System.Windows.Forms.Label();
+            this.txtAngulo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // pnlGrafico
@@ -52,6 +52,7 @@
             this.pnlGrafico.Name = "pnlGrafico";
             this.pnlGrafico.Size = new System.Drawing.Size(264, 254);
             this.pnlGrafico.TabIndex = 63;
+            this.pnlGrafico.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrafico_Paint);
             // 
             // lblGrafico
             // 
@@ -76,12 +77,12 @@
             this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
             this.txtPerimetro.TabIndex = 60;
             // 
-            // txtLado
+            // txtRadio
             // 
-            this.txtLado.Location = new System.Drawing.Point(154, 47);
-            this.txtLado.Name = "txtLado";
-            this.txtLado.Size = new System.Drawing.Size(100, 20);
-            this.txtLado.TabIndex = 59;
+            this.txtRadio.Location = new System.Drawing.Point(154, 47);
+            this.txtRadio.Name = "txtRadio";
+            this.txtRadio.Size = new System.Drawing.Size(100, 20);
+            this.txtRadio.TabIndex = 59;
             // 
             // lblArea
             // 
@@ -118,6 +119,7 @@
             this.btnSalir.TabIndex = 55;
             this.btnSalir.Text = "Exit";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnResetear
             // 
@@ -127,6 +129,7 @@
             this.btnResetear.TabIndex = 54;
             this.btnResetear.Text = "Reset";
             this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
             // 
             // btnCalcular
             // 
@@ -136,6 +139,7 @@
             this.btnCalcular.TabIndex = 53;
             this.btnCalcular.Text = "Calculate";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // lblProceso
             // 
@@ -146,14 +150,14 @@
             this.lblProceso.TabIndex = 52;
             this.lblProceso.Text = "Process :";
             // 
-            // lblLado
+            // lblRadio
             // 
-            this.lblLado.AutoSize = true;
-            this.lblLado.Location = new System.Drawing.Point(91, 54);
-            this.lblLado.Name = "lblLado";
-            this.lblLado.Size = new System.Drawing.Size(49, 13);
-            this.lblLado.TabIndex = 51;
-            this.lblLado.Text = "Side (L) :";
+            this.lblRadio.AutoSize = true;
+            this.lblRadio.Location = new System.Drawing.Point(91, 54);
+            this.lblRadio.Name = "lblRadio";
+            this.lblRadio.Size = new System.Drawing.Size(62, 13);
+            this.lblRadio.TabIndex = 51;
+            this.lblRadio.Text = "Radio ( r )  :";
             // 
             // lblEntradas
             // 
@@ -164,21 +168,21 @@
             this.lblEntradas.TabIndex = 50;
             this.lblEntradas.Text = "Inputs :";
             // 
-            // label1
+            // lblAngulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(94, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 64;
-            this.label1.Text = "label1";
+            this.lblAngulo.AutoSize = true;
+            this.lblAngulo.Location = new System.Drawing.Point(95, 88);
+            this.lblAngulo.Name = "lblAngulo";
+            this.lblAngulo.Size = new System.Drawing.Size(46, 13);
+            this.lblAngulo.TabIndex = 64;
+            this.lblAngulo.Text = "Angulo :";
             // 
-            // textBox1
+            // txtAngulo
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 65;
+            this.txtAngulo.Location = new System.Drawing.Point(154, 81);
+            this.txtAngulo.Name = "txtAngulo";
+            this.txtAngulo.Size = new System.Drawing.Size(100, 20);
+            this.txtAngulo.TabIndex = 65;
             // 
             // Angle
             // 
@@ -186,13 +190,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1028, 609);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtAngulo);
+            this.Controls.Add(this.lblAngulo);
             this.Controls.Add(this.pnlGrafico);
             this.Controls.Add(this.lblGrafico);
             this.Controls.Add(this.txtArea);
             this.Controls.Add(this.txtPerimetro);
-            this.Controls.Add(this.txtLado);
+            this.Controls.Add(this.txtRadio);
             this.Controls.Add(this.lblArea);
             this.Controls.Add(this.lblPerimetro);
             this.Controls.Add(this.lblSalida);
@@ -200,7 +204,7 @@
             this.Controls.Add(this.btnResetear);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.lblProceso);
-            this.Controls.Add(this.lblLado);
+            this.Controls.Add(this.lblRadio);
             this.Controls.Add(this.lblEntradas);
             this.Name = "Angle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -217,7 +221,7 @@
         private System.Windows.Forms.Label lblGrafico;
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.TextBox txtPerimetro;
-        private System.Windows.Forms.TextBox txtLado;
+        private System.Windows.Forms.TextBox txtRadio;
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.Label lblPerimetro;
         private System.Windows.Forms.Label lblSalida;
@@ -225,9 +229,9 @@
         private System.Windows.Forms.Button btnResetear;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label lblProceso;
-        private System.Windows.Forms.Label lblLado;
+        private System.Windows.Forms.Label lblRadio;
         private System.Windows.Forms.Label lblEntradas;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblAngulo;
+        private System.Windows.Forms.TextBox txtAngulo;
     }
 }
