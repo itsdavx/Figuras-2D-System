@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -105,31 +105,33 @@ namespace Figuras_2D
                 Graphics g = e.Graphics;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                Pen lapiz = new Pen(Color.Black, 2);
-                SolidBrush brocha = new SolidBrush(Color.FromArgb(180, 160, 120));
+                Pen lapiz = new Pen(Color.Blue, 3);
+                SolidBrush brocha = new SolidBrush(Color.LightBlue);
 
                 float diametro = (float)radio * 6f;
 
-                // Ajustar tamaño al panel
-                if (diametro > pnlGrafico.Width - 20)
-                    diametro = pnlGrafico.Width - 20;
+                // Ajustar al panel
+                if (diametro > pnlGrafico.Width - 30)
+                    diametro = pnlGrafico.Width - 30;
 
-                if (diametro > pnlGrafico.Height - 20)
-                    diametro = pnlGrafico.Height - 20;
+                if (diametro > pnlGrafico.Height - 30)
+                    diametro = pnlGrafico.Height - 30;
 
-                // CENTRADO TOTAL
+                // CENTRADO ARRIBA
                 float x = (pnlGrafico.Width - diametro) / 2;
-                float y = (pnlGrafico.Height - diametro) / 2;
+                float y = 20;
 
-                float inicioHueco = 270f; // arriba
-                float inicio = inicioHueco + (float)angulo;
+                // Abertura centrada al lado derecho
+                float inicio = (float)(angulo / 2.0);
                 float barrido = 360f - (float)angulo;
 
                 g.FillPie(brocha, x, y, diametro, diametro, inicio, barrido);
                 g.DrawPie(lapiz, x, y, diametro, diametro, inicio, barrido);
+
+                // Dibujar arco exterior completo visible
+                g.DrawArc(lapiz, x, y, diametro, diametro, inicio, barrido);
             }
         }
-        
 
         private void btnResetear_Click(object sender, EventArgs e)
         {

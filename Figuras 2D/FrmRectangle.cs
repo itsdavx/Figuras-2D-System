@@ -1,13 +1,23 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.MonthCalendar;
 
 namespace Figuras_2D
 {
     public partial class FrmRectangle : Form
     {
         private static FrmRectangle instancia;
-        private double anchoDibujo, largoDibujo; // Añadido para almacenar dimensiones de dibujo
+        // Añadidos: variables para el dibujo
+        private double anchoDibujo = 0;
+        private double largoDibujo = 0;
+
         public FrmRectangle()
         {
             InitializeComponent();
@@ -55,14 +65,15 @@ namespace Figuras_2D
             perimetro = 2 * (ancho + largo);
             area = ancho * largo;
 
-            // 4. Salida de resultados
-            txtPerimetro.Text = perimetro.ToString("N2"); // "N2" para mostrar 2 decimales
-            txtArea.Text = area.ToString("N2");
+            // 4. Salida de resultados (usar los controles correctos)
+            txtPerimeter.Text = perimetro.ToString("N2"); // Perímetro con 2 decimales
+            txtArea.Text = area.ToString("N2");           // Área con 2 decimales
 
+            // Usar los mismos textboxes de entrada para el dibujo (txtAncho / txtLargo)
             if (double.TryParse(txtAncho.Text, out anchoDibujo) && double.TryParse(txtLargo.Text, out largoDibujo))
             {
-                // Realizar cálculos de texto
-                txtPerimetro.Text = (2 * (anchoDibujo + largoDibujo)).ToString("N2");
+                // Actualizar textos si se quiere mostrar valores sin formato
+                txtPerimeter.Text = (2 * (anchoDibujo + largoDibujo)).ToString("N2");
                 txtArea.Text = (anchoDibujo * largoDibujo).ToString("N2");
 
                 // FORZAR AL PANEL A DIBUJAR
@@ -88,41 +99,6 @@ namespace Figuras_2D
 
         }
 
-        // Añadido: Implementación del método que faltaba
-        private void DibujarRectangulo(double ancho, double largo)
-        {
-            // Guardar las dimensiones para que el Paint las use
-            anchoDibujo = ancho;
-            largoDibujo = largo;
-
-            // Forzar repintado del panel
-            if (pnlGrafico != null)
-                pnlGrafico.Invalidate();
-        }
-
-        private void btnResetear_Click(object sender, EventArgs e)
-        {
-            // Limpiar variables del dibujo
-            anchoDibujo = 0;
-            largoDibujo = 0;
-
-            // Limpiar cajas de texto
-            txtAncho.Clear();
-            txtLargo.Clear();
-            txtPerimetro.Clear();
-            txtArea.Clear();
-
-            // Limpiar panel gráfico
-            pnlGrafico.Refresh();
-
-            // Regresar cursor al inicio
-            txtAncho.Focus();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         private void pnlGrafico_Paint(object sender, PaintEventArgs e)
         {
             if (anchoDibujo > 0 && largoDibujo > 0)
@@ -145,6 +121,16 @@ namespace Figuras_2D
                 SolidBrush brocha = new SolidBrush(Color.FromArgb(100, Color.LightBlue));
                 g.FillRectangle(brocha, x, y, w, h);
             }
+        }
+
+        // Método auxiliar (si existe en tu clase original)
+        private void DibujarRectangulo(double ancho, double largo)
+        {
+            // Si quieres usar este método para actualizar anchoDibujo/largoDibujo, hazlo aquí.
+            // Ejemplo básico:
+            anchoDibujo = ancho;
+            largoDibujo = largo;
+            pnlGrafico.Invalidate();
         }
     }
 }
