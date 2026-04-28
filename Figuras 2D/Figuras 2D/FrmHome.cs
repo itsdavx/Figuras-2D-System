@@ -172,7 +172,7 @@ namespace Figuras_2D
 
         private void miPieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPie frmPie = FrmPie.Instancia;
+            Angle frmPie = Angle.Instancia;
             frmPie.MdiParent = this;
             frmPie.Show();
         }
@@ -182,6 +182,11 @@ namespace Figuras_2D
             FrmArrow frmArrow = FrmArrow.Instancia;
             frmArrow.MdiParent = this;
             frmArrow.Show();
+        }
+
+        private void miFigurasCurvasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

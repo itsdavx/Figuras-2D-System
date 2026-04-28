@@ -10,23 +10,28 @@ using System.Windows.Forms;
 
 namespace Figuras_2D
 {
-    public partial class FrmPie : Form
+    public partial class Angle : Form
     {
-        private static FrmPie instancia;
-        public FrmPie()
+        private static Angle instancia;
+        public Angle()
         {
             InitializeComponent();
         }
-        public static FrmPie Instancia
+        public static Angle Instancia
         {
             get
             {
                 if (instancia == null || instancia.IsDisposed)
                 {
-                    instancia = new FrmPie();
+                    instancia = new Angle();
                 }
                 return instancia;
             }
+        }
+
+        private void FrmPie_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
