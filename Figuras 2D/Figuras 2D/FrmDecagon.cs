@@ -97,7 +97,10 @@ namespace Figuras_2D
                 int lados = 10;
                 PointF[] puntos = new PointF[lados];
 
-                float radio = (float)ladoDibujo * 5;
+                float margen = 20;
+
+                // Radio automático según tamaño del panel
+                float radio = Math.Min(pnlGrafico.Width, pnlGrafico.Height) / 2 - margen;
 
                 float centroX = pnlGrafico.Width / 2;
                 float centroY = pnlGrafico.Height / 2;

@@ -46,16 +46,16 @@
             // 
             // pnlGrafico
             // 
-            this.pnlGrafico.Location = new System.Drawing.Point(391, 38);
+            this.pnlGrafico.Location = new System.Drawing.Point(85, 278);
             this.pnlGrafico.Name = "pnlGrafico";
-            this.pnlGrafico.Size = new System.Drawing.Size(264, 254);
+            this.pnlGrafico.Size = new System.Drawing.Size(584, 481);
             this.pnlGrafico.TabIndex = 63;
             this.pnlGrafico.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrafico_Paint);
             // 
             // lblGrafico
             // 
             this.lblGrafico.AutoSize = true;
-            this.lblGrafico.Location = new System.Drawing.Point(399, 20);
+            this.lblGrafico.Location = new System.Drawing.Point(85, 262);
             this.lblGrafico.Name = "lblGrafico";
             this.lblGrafico.Size = new System.Drawing.Size(50, 13);
             this.lblGrafico.TabIndex = 62;
@@ -63,14 +63,14 @@
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(163, 252);
+            this.txtArea.Location = new System.Drawing.Point(148, 227);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(100, 20);
             this.txtArea.TabIndex = 61;
             // 
             // txtPerimetro
             // 
-            this.txtPerimetro.Location = new System.Drawing.Point(163, 214);
+            this.txtPerimetro.Location = new System.Drawing.Point(148, 183);
             this.txtPerimetro.Name = "txtPerimetro";
             this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
             this.txtPerimetro.TabIndex = 60;
@@ -85,7 +85,7 @@
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(89, 259);
+            this.lblArea.Location = new System.Drawing.Point(85, 234);
             this.lblArea.Name = "lblArea";
             this.lblArea.Size = new System.Drawing.Size(35, 13);
             this.lblArea.TabIndex = 58;
@@ -94,7 +94,7 @@
             // lblPerimetro
             // 
             this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(83, 214);
+            this.lblPerimetro.Location = new System.Drawing.Point(83, 183);
             this.lblPerimetro.Name = "lblPerimetro";
             this.lblPerimetro.Size = new System.Drawing.Size(57, 13);
             this.lblPerimetro.TabIndex = 57;
@@ -103,7 +103,7 @@
             // lblSalida
             // 
             this.lblSalida.AutoSize = true;
-            this.lblSalida.Location = new System.Drawing.Point(83, 178);
+            this.lblSalida.Location = new System.Drawing.Point(83, 148);
             this.lblSalida.Name = "lblSalida";
             this.lblSalida.Size = new System.Drawing.Size(50, 13);
             this.lblSalida.TabIndex = 56;
@@ -111,7 +111,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(288, 130);
+            this.btnSalir.Location = new System.Drawing.Point(303, 112);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 55;
@@ -121,7 +121,7 @@
             // 
             // btnResetear
             // 
-            this.btnResetear.Location = new System.Drawing.Point(188, 130);
+            this.btnResetear.Location = new System.Drawing.Point(188, 112);
             this.btnResetear.Name = "btnResetear";
             this.btnResetear.Size = new System.Drawing.Size(75, 23);
             this.btnResetear.TabIndex = 54;
@@ -131,7 +131,7 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(85, 130);
+            this.btnCalcular.Location = new System.Drawing.Point(85, 112);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 53;
@@ -142,7 +142,7 @@
             // lblProceso
             // 
             this.lblProceso.AutoSize = true;
-            this.lblProceso.Location = new System.Drawing.Point(82, 95);
+            this.lblProceso.Location = new System.Drawing.Point(89, 85);
             this.lblProceso.Name = "lblProceso";
             this.lblProceso.Size = new System.Drawing.Size(51, 13);
             this.lblProceso.TabIndex = 52;
