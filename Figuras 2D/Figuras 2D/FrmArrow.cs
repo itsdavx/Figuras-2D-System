@@ -59,6 +59,20 @@ namespace Figuras_2D
                 ancho = float.Parse(txtAnchoDelCuerpo.Text);
                 lado = float.Parse(txtLadoDelTrianguloEquilatero.Text);
 
+                // VALIDACIONES
+                if (largo <= 0 || ancho <= 0 || lado <= 0)
+                {
+                    MessageBox.Show("Todos los valores deben ser mayores a cero");
+                    return;
+                }
+
+                // VALIDACIÓN CLAVE DEL TRIÁNGULO
+                if (lado < ancho)
+                {
+                    MessageBox.Show("El lado del triángulo no puede ser menor que el ancho del cuerpo");
+                    return;
+                }
+
                 double area = (largo * ancho) + (Math.Sqrt(3) / 4) * (lado * lado);
                 double perimetro = 2 * (largo + ancho) + 2 * lado;
 
