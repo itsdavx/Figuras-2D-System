@@ -38,15 +38,12 @@ namespace Figuras_2D
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             double baseMayor, baseMenor, altura;
-            double ladoIzquierdo, ladoDerecho;
             double perimetro, area;
 
             // Validar campos vacíos
             if (txtBaseMayor.Text.Trim() == "" ||
                 txtBaseMenor.Text.Trim() == "" ||
-                txtAltura.Text.Trim() == "" ||
-                txtLadoIzquierdo.Text.Trim() == "" ||
-                txtLadoDerecho.Text.Trim() == "")
+                txtAltura.Text.Trim() == "")
             {
                 MessageBox.Show("Complete todos los campos.",
                                 "Dato requerido",
@@ -58,9 +55,7 @@ namespace Figuras_2D
             // Validar números
             if (!double.TryParse(txtBaseMayor.Text, out baseMayor) ||
                 !double.TryParse(txtBaseMenor.Text, out baseMenor) ||
-                !double.TryParse(txtAltura.Text, out altura) ||
-                !double.TryParse(txtLadoIzquierdo.Text, out ladoIzquierdo) ||
-                !double.TryParse(txtLadoDerecho.Text, out ladoDerecho))
+                !double.TryParse(txtAltura.Text, out altura))
             {
                 MessageBox.Show("Ingrese solo números válidos.",
                                 "Error",
@@ -70,8 +65,7 @@ namespace Figuras_2D
             }
 
             // Validar positivos
-            if (baseMayor <= 0 || baseMenor <= 0 || altura <= 0 ||
-                ladoIzquierdo <= 0 || ladoDerecho <= 0)
+            if (baseMayor <= 0 || baseMenor <= 0 || altura <= 0 )
             {
                 MessageBox.Show("Todos los valores deben ser mayores que cero.",
                                 "Error",
@@ -92,7 +86,7 @@ namespace Figuras_2D
             }
 
             // Cálculos
-            perimetro = baseMayor + baseMenor + ladoIzquierdo + ladoDerecho;
+            perimetro = baseMayor + baseMenor ;
             area = ((baseMayor + baseMenor) * altura) / 2;
 
             txtPerimetro.Text = perimetro.ToString("N2");
@@ -113,29 +107,47 @@ namespace Figuras_2D
                 Graphics g = e.Graphics;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                Pen lapiz = new Pen(Color.Blue, 3);
-                SolidBrush brocha = new SolidBrush(Color.FromArgb(100, Color.LightBlue));
+                Pen lapiz = new Pen(Color.Blue, 2);
+                SolidBrush brocha = new SolidBrush(Color.FromArgb(120, Color.LightBlue));
 
-                float escala = 8;
+                // Márgenes para que no toque los bordes
+                float margen = 20;
 
-                float B = (float)baseMayorDibujo * escala;
-                float b = (float)baseMenorDibujo * escala;
-                float h = (float)alturaDibujo * escala;
+                float panelW = pnlGrafico.Width - 2 * margen;
+                float panelH = pnlGrafico.Height - 2 * margen;
 
-                float x = (pnlGrafico.Width - B) / 2;
-                float y = pnlGrafico.Height - 40;
+                float B = (float)baseMayorDibujo;
+                float b = (float)baseMenorDibujo;
+                float h = (float)alturaDibujo;
 
-                float diferencia = (B - b) / 2;
+                // ESCALA DINÁMICA
+                float escalaX = panelW / B;
+                float escalaY = panelH / h;
+                float escala = Math.Min(escalaX, escalaY);
+
+                // Aplicar escala
+                float Besc = B * escala;
+                float besc = b * escala;
+                float hesc = h * escala;
+
+                // CENTRADO
+                float x = (pnlGrafico.Width - Besc) / 2;
+                float y = (pnlGrafico.Height + hesc) / 2;
+
+                float diferencia = (Besc - besc) / 2;
 
                 PointF p1 = new PointF(x, y);
-                PointF p2 = new PointF(x + B, y);
-                PointF p3 = new PointF(x + B - diferencia, y - h);
-                PointF p4 = new PointF(x + diferencia, y - h);
+                PointF p2 = new PointF(x + Besc, y);
+                PointF p3 = new PointF(x + Besc - diferencia, y - hesc);
+                PointF p4 = new PointF(x + diferencia, y - hesc);
 
                 PointF[] puntos = { p1, p2, p3, p4 };
 
                 g.FillPolygon(brocha, puntos);
                 g.DrawPolygon(lapiz, puntos);
+
+                lapiz.Dispose();
+                brocha.Dispose();
             }
         }
 
@@ -150,8 +162,6 @@ namespace Figuras_2D
             txtBaseMayor.Clear();
             txtBaseMenor.Clear();
             txtAltura.Clear();
-            txtLadoIzquierdo.Clear();
-            txtLadoDerecho.Clear();
             txtPerimetro.Clear();
             txtArea.Clear();
 

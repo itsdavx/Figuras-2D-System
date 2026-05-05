@@ -59,20 +59,27 @@ namespace Figuras_2D
                 ancho = float.Parse(txtAnchoDelCuerpo.Text);
                 lado = float.Parse(txtLadoDelTrianguloEquilatero.Text);
 
-                // VALIDACIONES
+                // VALIDACIÓN: valores positivos
                 if (largo <= 0 || ancho <= 0 || lado <= 0)
                 {
-                    MessageBox.Show("Todos los valores deben ser mayores a cero");
+                    MessageBox.Show("Todos los valores deben ser mayores a cero",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                     return;
                 }
 
-                // VALIDACIÓN CLAVE DEL TRIÁNGULO
-                if (lado < ancho)
+                // 🔥 VALIDACIÓN MEJORADA DEL TRIÁNGULO
+                if (lado <= Math.Max(largo, ancho))
                 {
-                    MessageBox.Show("El lado del triángulo no puede ser menor que el ancho del cuerpo");
+                    MessageBox.Show("El lado del triángulo debe ser mayor que el largo y el ancho del cuerpo.",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                     return;
                 }
 
+                // CÁLCULOS
                 double area = (largo * ancho) + (Math.Sqrt(3) / 4) * (lado * lado);
                 double perimetro = 2 * (largo + ancho) + 2 * lado;
 
@@ -84,7 +91,10 @@ namespace Figuras_2D
             }
             catch
             {
-                MessageBox.Show("Ingrese valores válidos");
+                MessageBox.Show("Ingrese valores numéricos válidos",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
 
@@ -95,48 +105,68 @@ namespace Figuras_2D
             Graphics g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-            float escala = 10;
-            float rectL = largo * escala; // Largo del cuerpo
-            float rectA = ancho * escala; // Grosor del cuerpo
-            float triL = lado * escala;  // Lado del triángulo equilátero
+            float margen = 20;
+            float panelW = pnlGrafico.Width - 2 * margen;
+            float panelH = pnlGrafico.Height - 2 * margen;
 
-            // 1. Calculamos la altura real del triángulo equilátero usando la fórmula: h = (sqrt(3)/2) * lado
+            // Medidas reales
+            float rectL = largo;
+            float rectA = ancho;
+            float triL = lado;
+
             float alturaTriangulo = (float)(Math.Sqrt(3) / 2 * triL);
 
-            // 2. Centramos el dibujo en el panel
-            // El ancho total es rectL + alturaTriangulo
-            float xInicio = (pnlGrafico.Width - (rectL + alturaTriangulo)) / 2;
-            float yCentro = pnlGrafico.Height / 2;
+            float totalW = rectL + alturaTriangulo;
+            float totalH = triL;
 
-            // 3. Definir los puntos del cuerpo (Rectángulo)
-            float rectY = yCentro - (rectA / 2);
-            RectangleF cuerpo = new RectangleF(xInicio, rectY, rectL, rectA);
+            // Escala
+            float escala = Math.Min(panelW / totalW, panelH / totalH);
+            escala *= 0.9f;
 
-            // 4. Definir los puntos de la cabeza (Triángulo equilátero)
-            // El punto de conexión es xInicio + rectL
-            PointF p1 = new PointF(xInicio + rectL, yCentro - (triL / 2)); // Esquina superior
-            PointF p2 = new PointF(xInicio + rectL + alturaTriangulo, yCentro); // Punta
-            PointF p3 = new PointF(xInicio + rectL, yCentro + (triL / 2)); // Esquina inferior
-            PointF[] puntosTriangulo = { p1, p2, p3 };
+            rectL *= escala;
+            rectA *= escala;
+            triL *= escala;
+            alturaTriangulo *= escala;
 
-            // --- DIBUJAR ---
-            // Colores basados en tu imagen
-            Brush rellenoCuerpo = new SolidBrush(Color.FromArgb(45, 170, 225)); // Celeste
-            Pen borde = new Pen(Color.FromArgb(20, 40, 80), 2); // Azul oscuro
+            float centroX = pnlGrafico.Width / 2;
+            float centroY = pnlGrafico.Height / 2;
 
-            // Dibujar Cuerpo
-            g.FillRectangle(rellenoCuerpo, cuerpo);
-            g.DrawRectangle(borde, cuerpo.X, cuerpo.Y, cuerpo.Width, cuerpo.Height);
+            float xInicio = centroX - (rectL + alturaTriangulo) / 2;
+            float yCentro = centroY;
 
-            // Dibujar Cabeza
-            g.FillPolygon(rellenoCuerpo, puntosTriangulo);
-            g.DrawPolygon(borde, puntosTriangulo);
+            float yTop = yCentro - rectA / 2;
+            float yBottom = yCentro + rectA / 2;
 
-            // Limpieza de recursos
-            rellenoCuerpo.Dispose();
+            float yTriTop = yCentro - triL / 2;
+            float yTriBottom = yCentro + triL / 2;
+
+            // POLÍGONO COMPLETO DE LA FLECHA
+            PointF[] puntos = new PointF[]
+            {
+        new PointF(xInicio, yTop),                          // izquierda arriba
+        new PointF(xInicio + rectL, yTop),                  // unión arriba
+        new PointF(xInicio + rectL, yTriTop),               // inicio triángulo arriba
+        new PointF(xInicio + rectL + alturaTriangulo, yCentro), // punta
+        new PointF(xInicio + rectL, yTriBottom),            // triángulo abajo
+        new PointF(xInicio + rectL, yBottom),               // unión abajo
+        new PointF(xInicio, yBottom)                        // izquierda abajo
+            };
+
+            Brush relleno = new SolidBrush(Color.FromArgb(45, 170, 225));
+            Pen borde = new Pen(Color.FromArgb(20, 40, 80), 2);
+
+            g.FillPolygon(relleno, puntos);
+            g.DrawPolygon(borde, puntos);
+
+            relleno.Dispose();
             borde.Dispose();
         }
         private void FrmArrow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEntradas_Click(object sender, EventArgs e)
         {
 
         }

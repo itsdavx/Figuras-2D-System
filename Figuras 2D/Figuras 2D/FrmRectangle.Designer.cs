@@ -49,84 +49,96 @@
             // lblEntradas
             // 
             this.lblEntradas.AutoSize = true;
-            this.lblEntradas.Location = new System.Drawing.Point(34, 27);
+            this.lblEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntradas.Location = new System.Drawing.Point(41, 22);
             this.lblEntradas.Name = "lblEntradas";
-            this.lblEntradas.Size = new System.Drawing.Size(42, 13);
+            this.lblEntradas.Size = new System.Drawing.Size(70, 20);
             this.lblEntradas.TabIndex = 0;
             this.lblEntradas.Text = "Inputs :";
             // 
             // lblAncho
             // 
             this.lblAncho.AutoSize = true;
-            this.lblAncho.Location = new System.Drawing.Point(37, 59);
+            this.lblAncho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAncho.Location = new System.Drawing.Point(37, 78);
             this.lblAncho.Name = "lblAncho";
-            this.lblAncho.Size = new System.Drawing.Size(56, 13);
+            this.lblAncho.Size = new System.Drawing.Size(81, 20);
             this.lblAncho.TabIndex = 1;
             this.lblAncho.Text = "Width (a) :";
             // 
             // lblLargo
             // 
             this.lblLargo.AutoSize = true;
-            this.lblLargo.Location = new System.Drawing.Point(37, 94);
+            this.lblLargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLargo.Location = new System.Drawing.Point(37, 137);
             this.lblLargo.Name = "lblLargo";
-            this.lblLargo.Size = new System.Drawing.Size(61, 13);
+            this.lblLargo.Size = new System.Drawing.Size(90, 20);
             this.lblLargo.TabIndex = 2;
             this.lblLargo.Text = "Length (b) :";
             // 
             // lblProceso
             // 
             this.lblProceso.AutoSize = true;
-            this.lblProceso.Location = new System.Drawing.Point(37, 148);
+            this.lblProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProceso.Location = new System.Drawing.Point(37, 185);
             this.lblProceso.Name = "lblProceso";
-            this.lblProceso.Size = new System.Drawing.Size(51, 13);
+            this.lblProceso.Size = new System.Drawing.Size(83, 20);
             this.lblProceso.TabIndex = 3;
             this.lblProceso.Text = "Process :";
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(40, 185);
+            this.btnCalcular.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Location = new System.Drawing.Point(37, 226);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.Size = new System.Drawing.Size(107, 30);
             this.btnCalcular.TabIndex = 4;
             this.btnCalcular.Text = "Calculate";
-            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // btnResetear
             // 
-            this.btnResetear.Location = new System.Drawing.Point(155, 185);
+            this.btnResetear.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnResetear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetear.Location = new System.Drawing.Point(37, 275);
             this.btnResetear.Name = "btnResetear";
-            this.btnResetear.Size = new System.Drawing.Size(75, 23);
+            this.btnResetear.Size = new System.Drawing.Size(107, 25);
             this.btnResetear.TabIndex = 5;
             this.btnResetear.Text = "Reset";
-            this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.UseVisualStyleBackColor = false;
             this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(263, 184);
+            this.btnSalir.BackColor = System.Drawing.Color.Thistle;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(37, 332);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(107, 26);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.Text = "Exit";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblSalida
             // 
             this.lblSalida.AutoSize = true;
-            this.lblSalida.Location = new System.Drawing.Point(38, 223);
+            this.lblSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalida.Location = new System.Drawing.Point(37, 382);
             this.lblSalida.Name = "lblSalida";
-            this.lblSalida.Size = new System.Drawing.Size(50, 13);
+            this.lblSalida.Size = new System.Drawing.Size(83, 20);
             this.lblSalida.TabIndex = 7;
             this.lblSalida.Text = "Outputs :";
             // 
             // lblPerimetro
             // 
             this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(43, 253);
+            this.lblPerimetro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerimetro.Location = new System.Drawing.Point(35, 422);
             this.lblPerimetro.Name = "lblPerimetro";
-            this.lblPerimetro.Size = new System.Drawing.Size(57, 13);
+            this.lblPerimetro.Size = new System.Drawing.Size(85, 20);
             this.lblPerimetro.TabIndex = 8;
             this.lblPerimetro.Text = "Perimeter :";
             this.lblPerimetro.Click += new System.EventHandler(this.lblPerimetro_Click);
@@ -134,29 +146,30 @@
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(46, 286);
+            this.lblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArea.Location = new System.Drawing.Point(41, 465);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(35, 13);
+            this.lblArea.Size = new System.Drawing.Size(51, 20);
             this.lblArea.TabIndex = 9;
             this.lblArea.Text = "Area :";
             // 
             // txtAncho
             // 
-            this.txtAncho.Location = new System.Drawing.Point(100, 52);
+            this.txtAncho.Location = new System.Drawing.Point(192, 80);
             this.txtAncho.Name = "txtAncho";
             this.txtAncho.Size = new System.Drawing.Size(100, 20);
             this.txtAncho.TabIndex = 10;
             // 
             // txtLargo
             // 
-            this.txtLargo.Location = new System.Drawing.Point(100, 86);
+            this.txtLargo.Location = new System.Drawing.Point(192, 139);
             this.txtLargo.Name = "txtLargo";
             this.txtLargo.Size = new System.Drawing.Size(100, 20);
             this.txtLargo.TabIndex = 11;
             // 
             // txtPerimetro
             // 
-            this.txtPerimetro.Location = new System.Drawing.Point(130, 253);
+            this.txtPerimetro.Location = new System.Drawing.Point(192, 422);
             this.txtPerimetro.Name = "txtPerimetro";
             this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
             this.txtPerimetro.TabIndex = 12;
@@ -164,7 +177,7 @@
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(130, 286);
+            this.txtArea.Location = new System.Drawing.Point(192, 465);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(100, 20);
             this.txtArea.TabIndex = 13;
@@ -173,17 +186,19 @@
             // lblGrafico
             // 
             this.lblGrafico.AutoSize = true;
-            this.lblGrafico.Location = new System.Drawing.Point(370, 27);
+            this.lblGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrafico.Location = new System.Drawing.Point(337, 22);
             this.lblGrafico.Name = "lblGrafico";
-            this.lblGrafico.Size = new System.Drawing.Size(50, 13);
+            this.lblGrafico.Size = new System.Drawing.Size(82, 20);
             this.lblGrafico.TabIndex = 14;
             this.lblGrafico.Text = "Graphic :";
             // 
             // pnlGrafico
             // 
-            this.pnlGrafico.Location = new System.Drawing.Point(373, 52);
+            this.pnlGrafico.BackColor = System.Drawing.Color.White;
+            this.pnlGrafico.Location = new System.Drawing.Point(340, 49);
             this.pnlGrafico.Name = "pnlGrafico";
-            this.pnlGrafico.Size = new System.Drawing.Size(316, 236);
+            this.pnlGrafico.Size = new System.Drawing.Size(649, 548);
             this.pnlGrafico.TabIndex = 15;
             this.pnlGrafico.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrafico_Paint);
             // 

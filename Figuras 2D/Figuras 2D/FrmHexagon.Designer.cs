@@ -39,60 +39,71 @@
             // 
             // PanelGrafico
             // 
-            this.PanelGrafico.Location = new System.Drawing.Point(32, 148);
+            this.PanelGrafico.Location = new System.Drawing.Point(24, 120);
+            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelGrafico.Name = "PanelGrafico";
             this.PanelGrafico.Size = new System.Drawing.Size(0, 0);
             this.PanelGrafico.TabIndex = 23;
             // 
             // btnGraficar
             // 
-            this.btnGraficar.Location = new System.Drawing.Point(225, 69);
+            this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraficar.Location = new System.Drawing.Point(231, 46);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGraficar.Name = "btnGraficar";
-            this.btnGraficar.Size = new System.Drawing.Size(75, 23);
+            this.btnGraficar.Size = new System.Drawing.Size(75, 36);
             this.btnGraficar.TabIndex = 22;
-            this.btnGraficar.Text = "Graficar";
-            this.btnGraficar.UseVisualStyleBackColor = true;
+            this.btnGraficar.Text = "Graph";
+            this.btnGraficar.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(164, 72);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(148, 58);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 16);
+            this.label6.Size = new System.Drawing.Size(30, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "cm";
             // 
             // txtLado
             // 
-            this.txtLado.Location = new System.Drawing.Point(106, 69);
+            this.txtLado.Location = new System.Drawing.Point(92, 58);
+            this.txtLado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLado.Name = "txtLado";
-            this.txtLado.Size = new System.Drawing.Size(52, 22);
+            this.txtLado.Size = new System.Drawing.Size(52, 20);
             this.txtLado.TabIndex = 20;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 72);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(39, 58);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.Size = new System.Drawing.Size(45, 20);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Lado:";
+            this.label3.Text = "Side:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 108);
+            this.label1.Location = new System.Drawing.Point(21, 88);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Gráfico:";
+            this.label1.Text = "Graphic";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 25);
+            this.label2.Location = new System.Drawing.Point(21, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 17;
@@ -100,10 +111,10 @@
             // 
             // FrmHexagon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1784, 1061);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.PanelGrafico);
             this.Controls.Add(this.btnGraficar);
             this.Controls.Add(this.label6);
@@ -111,7 +122,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmHexagon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hexagon";

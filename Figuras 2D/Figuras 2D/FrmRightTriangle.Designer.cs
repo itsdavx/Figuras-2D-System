@@ -50,25 +50,27 @@
             // 
             // pnlGrafico
             // 
-            this.pnlGrafico.Location = new System.Drawing.Point(379, 49);
+            this.pnlGrafico.BackColor = System.Drawing.Color.White;
+            this.pnlGrafico.Location = new System.Drawing.Point(368, 60);
             this.pnlGrafico.Name = "pnlGrafico";
-            this.pnlGrafico.Size = new System.Drawing.Size(200, 100);
+            this.pnlGrafico.Size = new System.Drawing.Size(636, 518);
             this.pnlGrafico.TabIndex = 31;
             this.pnlGrafico.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrafico_Paint);
             // 
             // lblGrafico
             // 
             this.lblGrafico.AutoSize = true;
-            this.lblGrafico.Location = new System.Drawing.Point(387, 31);
+            this.lblGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrafico.Location = new System.Drawing.Point(365, 20);
             this.lblGrafico.Name = "lblGrafico";
-            this.lblGrafico.Size = new System.Drawing.Size(50, 13);
+            this.lblGrafico.Size = new System.Drawing.Size(82, 20);
             this.lblGrafico.TabIndex = 30;
             this.lblGrafico.Text = "Graphic :";
             this.lblGrafico.Click += new System.EventHandler(this.lblGrafico_Click);
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(166, 290);
+            this.txtArea.Location = new System.Drawing.Point(201, 499);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(100, 20);
             this.txtArea.TabIndex = 29;
@@ -76,7 +78,7 @@
             // 
             // txtPerimetro
             // 
-            this.txtPerimetro.Location = new System.Drawing.Point(166, 257);
+            this.txtPerimetro.Location = new System.Drawing.Point(201, 457);
             this.txtPerimetro.Name = "txtPerimetro";
             this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
             this.txtPerimetro.TabIndex = 28;
@@ -84,7 +86,7 @@
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(136, 90);
+            this.txtAltura.Location = new System.Drawing.Point(201, 135);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(100, 20);
             this.txtAltura.TabIndex = 27;
@@ -92,7 +94,7 @@
             // 
             // txtBase
             // 
-            this.txtBase.Location = new System.Drawing.Point(136, 56);
+            this.txtBase.Location = new System.Drawing.Point(201, 60);
             this.txtBase.Name = "txtBase";
             this.txtBase.Size = new System.Drawing.Size(100, 20);
             this.txtBase.TabIndex = 26;
@@ -101,9 +103,10 @@
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(82, 290);
+            this.lblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArea.Location = new System.Drawing.Point(70, 502);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(35, 13);
+            this.lblArea.Size = new System.Drawing.Size(51, 20);
             this.lblArea.TabIndex = 25;
             this.lblArea.Text = "Area :";
             this.lblArea.Click += new System.EventHandler(this.lblArea_Click);
@@ -111,9 +114,10 @@
             // lblPerimetro
             // 
             this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(79, 257);
+            this.lblPerimetro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerimetro.Location = new System.Drawing.Point(70, 455);
             this.lblPerimetro.Name = "lblPerimetro";
-            this.lblPerimetro.Size = new System.Drawing.Size(57, 13);
+            this.lblPerimetro.Size = new System.Drawing.Size(85, 20);
             this.lblPerimetro.TabIndex = 24;
             this.lblPerimetro.Text = "Perimeter :";
             this.lblPerimetro.Click += new System.EventHandler(this.lblPerimetro_Click);
@@ -121,49 +125,57 @@
             // lblSalida
             // 
             this.lblSalida.AutoSize = true;
-            this.lblSalida.Location = new System.Drawing.Point(74, 227);
+            this.lblSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalida.Location = new System.Drawing.Point(70, 400);
             this.lblSalida.Name = "lblSalida";
-            this.lblSalida.Size = new System.Drawing.Size(50, 13);
+            this.lblSalida.Size = new System.Drawing.Size(83, 20);
             this.lblSalida.TabIndex = 23;
             this.lblSalida.Text = "Outputs :";
             this.lblSalida.Click += new System.EventHandler(this.lblSalida_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(299, 188);
+            this.btnSalir.BackColor = System.Drawing.Color.Thistle;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(64, 342);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(105, 30);
             this.btnSalir.TabIndex = 22;
             this.btnSalir.Text = "Exit";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnResetear
             // 
-            this.btnResetear.Location = new System.Drawing.Point(191, 189);
+            this.btnResetear.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnResetear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetear.Location = new System.Drawing.Point(64, 298);
             this.btnResetear.Name = "btnResetear";
-            this.btnResetear.Size = new System.Drawing.Size(75, 23);
+            this.btnResetear.Size = new System.Drawing.Size(105, 27);
             this.btnResetear.TabIndex = 21;
             this.btnResetear.Text = "Reset";
-            this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.UseVisualStyleBackColor = false;
             this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(76, 189);
+            this.btnCalcular.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Location = new System.Drawing.Point(64, 241);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.Size = new System.Drawing.Size(105, 31);
             this.btnCalcular.TabIndex = 20;
             this.btnCalcular.Text = "Calculate";
-            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // lblProceso
             // 
             this.lblProceso.AutoSize = true;
-            this.lblProceso.Location = new System.Drawing.Point(73, 152);
+            this.lblProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProceso.Location = new System.Drawing.Point(61, 198);
             this.lblProceso.Name = "lblProceso";
-            this.lblProceso.Size = new System.Drawing.Size(51, 13);
+            this.lblProceso.Size = new System.Drawing.Size(83, 20);
             this.lblProceso.TabIndex = 19;
             this.lblProceso.Text = "Process :";
             this.lblProceso.Click += new System.EventHandler(this.lblProceso_Click);
@@ -171,9 +183,10 @@
             // lblAltura
             // 
             this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(73, 98);
+            this.lblAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltura.Location = new System.Drawing.Point(70, 133);
             this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(59, 13);
+            this.lblAltura.Size = new System.Drawing.Size(87, 20);
             this.lblAltura.TabIndex = 18;
             this.lblAltura.Text = "Height (h) :";
             this.lblAltura.Click += new System.EventHandler(this.lblLargo_Click);
@@ -181,9 +194,10 @@
             // lblBase
             // 
             this.lblBase.AutoSize = true;
-            this.lblBase.Location = new System.Drawing.Point(73, 63);
+            this.lblBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBase.Location = new System.Drawing.Point(70, 60);
             this.lblBase.Name = "lblBase";
-            this.lblBase.Size = new System.Drawing.Size(52, 13);
+            this.lblBase.Size = new System.Drawing.Size(77, 20);
             this.lblBase.TabIndex = 17;
             this.lblBase.Text = "Base (b) :";
             this.lblBase.Click += new System.EventHandler(this.lblBase_Click);
@@ -191,9 +205,10 @@
             // lblEntradas
             // 
             this.lblEntradas.AutoSize = true;
-            this.lblEntradas.Location = new System.Drawing.Point(70, 31);
+            this.lblEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntradas.Location = new System.Drawing.Point(70, 20);
             this.lblEntradas.Name = "lblEntradas";
-            this.lblEntradas.Size = new System.Drawing.Size(42, 13);
+            this.lblEntradas.Size = new System.Drawing.Size(70, 20);
             this.lblEntradas.TabIndex = 16;
             this.lblEntradas.Text = "Inputs :";
             this.lblEntradas.Click += new System.EventHandler(this.lblEntradas_Click);
@@ -201,16 +216,17 @@
             // lblHipotenusa
             // 
             this.lblHipotenusa.AutoSize = true;
-            this.lblHipotenusa.Location = new System.Drawing.Point(84, 328);
+            this.lblHipotenusa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHipotenusa.Location = new System.Drawing.Point(70, 553);
             this.lblHipotenusa.Name = "lblHipotenusa";
-            this.lblHipotenusa.Size = new System.Drawing.Size(67, 13);
+            this.lblHipotenusa.Size = new System.Drawing.Size(99, 20);
             this.lblHipotenusa.TabIndex = 32;
             this.lblHipotenusa.Text = "Hypotenuse:";
             this.lblHipotenusa.Click += new System.EventHandler(this.lblHipotenusa_Click);
             // 
             // txtHipotenusa
             // 
-            this.txtHipotenusa.Location = new System.Drawing.Point(166, 321);
+            this.txtHipotenusa.Location = new System.Drawing.Point(201, 555);
             this.txtHipotenusa.Name = "txtHipotenusa";
             this.txtHipotenusa.Size = new System.Drawing.Size(100, 20);
             this.txtHipotenusa.TabIndex = 33;

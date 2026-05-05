@@ -91,16 +91,28 @@ namespace Figuras_2D
                 Graphics g = e.Graphics;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                Pen lapiz = new Pen(Color.Blue, 3);
-                SolidBrush brocha = new SolidBrush(Color.FromArgb(100, Color.LightBlue));
+                Pen lapiz = new Pen(Color.Blue, 2);
+                SolidBrush brocha = new SolidBrush(Color.FromArgb(120, Color.LightBlue));
 
                 int lados = 10;
                 PointF[] puntos = new PointF[lados];
 
                 float margen = 20;
+                float panelW = pnlGrafico.Width - 2 * margen;
+                float panelH = pnlGrafico.Height - 2 * margen;
 
-                // Radio automático según tamaño del panel
-                float radio = Math.Min(pnlGrafico.Width, pnlGrafico.Height) / 2 - margen;
+                // RADIO BASADO EN EL LADO REAL
+                // Fórmula del radio de un polígono regular:
+                float radioReal = (float)(ladoDibujo / (2 * Math.Sin(Math.PI / lados)));
+
+                // ESCALA PARA QUE QUEPA EN EL PANEL
+                float escala = Math.Min(panelW, panelH) / (2 * radioReal);
+
+                // Limitar escala para que no se vea exagerado
+                escala = Math.Min(escala, 5f);
+                escala *= 0.9f;
+
+                float radio = radioReal * escala;
 
                 float centroX = pnlGrafico.Width / 2;
                 float centroY = pnlGrafico.Height / 2;
@@ -117,6 +129,9 @@ namespace Figuras_2D
 
                 g.FillPolygon(brocha, puntos);
                 g.DrawPolygon(lapiz, puntos);
+
+                lapiz.Dispose();
+                brocha.Dispose();
             }
         }
 

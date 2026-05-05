@@ -73,44 +73,50 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 55);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // miFigurasCurvasToolStripMenuItem
             // 
+            this.miFigurasCurvasToolStripMenuItem.BackColor = System.Drawing.Color.RosyBrown;
             this.miFigurasCurvasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miCircleToolStripMenuItem,
             this.miEllipseToolStripMenuItem,
             this.miOvalToolStripMenuItem});
+            this.miFigurasCurvasToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.miFigurasCurvasToolStripMenuItem.Name = "miFigurasCurvasToolStripMenuItem";
-            this.miFigurasCurvasToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.miFigurasCurvasToolStripMenuItem.Size = new System.Drawing.Size(276, 51);
             this.miFigurasCurvasToolStripMenuItem.Text = "Curved Shapes";
             this.miFigurasCurvasToolStripMenuItem.Click += new System.EventHandler(this.miFigurasCurvasToolStripMenuItem_Click);
             // 
             // miCircleToolStripMenuItem
             // 
+            this.miCircleToolStripMenuItem.BackColor = System.Drawing.Color.RosyBrown;
             this.miCircleToolStripMenuItem.Name = "miCircleToolStripMenuItem";
-            this.miCircleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miCircleToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miCircleToolStripMenuItem.Text = "Circle";
             this.miCircleToolStripMenuItem.Click += new System.EventHandler(this.miCircleToolStripMenuItem_Click);
             // 
             // miEllipseToolStripMenuItem
             // 
+            this.miEllipseToolStripMenuItem.BackColor = System.Drawing.Color.MistyRose;
             this.miEllipseToolStripMenuItem.Name = "miEllipseToolStripMenuItem";
-            this.miEllipseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miEllipseToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miEllipseToolStripMenuItem.Text = "Ellipse";
             this.miEllipseToolStripMenuItem.Click += new System.EventHandler(this.miEllipseToolStripMenuItem_Click);
             // 
             // miOvalToolStripMenuItem
             // 
+            this.miOvalToolStripMenuItem.BackColor = System.Drawing.Color.RosyBrown;
             this.miOvalToolStripMenuItem.Name = "miOvalToolStripMenuItem";
-            this.miOvalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miOvalToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miOvalToolStripMenuItem.Text = "Oval";
             this.miOvalToolStripMenuItem.Click += new System.EventHandler(this.miOvalToolStripMenuItem_Click);
             // 
             // miCuadrilaterosToolStripMenuItem
             // 
+            this.miCuadrilaterosToolStripMenuItem.BackColor = System.Drawing.Color.Moccasin;
             this.miCuadrilaterosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miSquareToolStripMenuItem,
             this.miRectangleToolStripMenuItem,
@@ -118,85 +124,98 @@
             this.miParallelogramToolStripMenuItem,
             this.miRhombusToolStripMenuItem,
             this.miKiteToolStripMenuItem});
+            this.miCuadrilaterosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.miCuadrilaterosToolStripMenuItem.Name = "miCuadrilaterosToolStripMenuItem";
-            this.miCuadrilaterosToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.miCuadrilaterosToolStripMenuItem.Size = new System.Drawing.Size(265, 51);
             this.miCuadrilaterosToolStripMenuItem.Text = "Quadrilaterals";
             // 
             // miSquareToolStripMenuItem
             // 
+            this.miSquareToolStripMenuItem.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.miSquareToolStripMenuItem.Name = "miSquareToolStripMenuItem";
-            this.miSquareToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.miSquareToolStripMenuItem.Size = new System.Drawing.Size(221, 34);
             this.miSquareToolStripMenuItem.Text = "Square";
             this.miSquareToolStripMenuItem.Click += new System.EventHandler(this.miSquareToolStripMenuItem_Click);
             // 
             // miRectangleToolStripMenuItem
             // 
+            this.miRectangleToolStripMenuItem.BackColor = System.Drawing.Color.Moccasin;
             this.miRectangleToolStripMenuItem.Name = "miRectangleToolStripMenuItem";
-            this.miRectangleToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.miRectangleToolStripMenuItem.Size = new System.Drawing.Size(221, 34);
             this.miRectangleToolStripMenuItem.Text = "Rectangle";
             this.miRectangleToolStripMenuItem.Click += new System.EventHandler(this.miRectangleToolStripMenuItem_Click);
             // 
             // miTrapeziumToolStripMenuItem
             // 
+            this.miTrapeziumToolStripMenuItem.BackColor = System.Drawing.Color.AntiqueWhite;
             this.miTrapeziumToolStripMenuItem.Name = "miTrapeziumToolStripMenuItem";
-            this.miTrapeziumToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.miTrapeziumToolStripMenuItem.Size = new System.Drawing.Size(221, 34);
             this.miTrapeziumToolStripMenuItem.Text = "Trapezium";
             this.miTrapeziumToolStripMenuItem.Click += new System.EventHandler(this.miTrapeziumToolStripMenuItem_Click);
             // 
             // miParallelogramToolStripMenuItem
             // 
+            this.miParallelogramToolStripMenuItem.BackColor = System.Drawing.Color.Moccasin;
             this.miParallelogramToolStripMenuItem.Name = "miParallelogramToolStripMenuItem";
-            this.miParallelogramToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.miParallelogramToolStripMenuItem.Size = new System.Drawing.Size(221, 34);
             this.miParallelogramToolStripMenuItem.Text = "Parallelogram";
             this.miParallelogramToolStripMenuItem.Click += new System.EventHandler(this.miParallelogramToolStripMenuItem_Click);
             // 
             // miRhombusToolStripMenuItem
             // 
+            this.miRhombusToolStripMenuItem.BackColor = System.Drawing.Color.AntiqueWhite;
             this.miRhombusToolStripMenuItem.Name = "miRhombusToolStripMenuItem";
-            this.miRhombusToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.miRhombusToolStripMenuItem.Size = new System.Drawing.Size(221, 34);
             this.miRhombusToolStripMenuItem.Text = "Rhombus";
             this.miRhombusToolStripMenuItem.Click += new System.EventHandler(this.miRhombusToolStripMenuItem_Click);
             // 
             // miKiteToolStripMenuItem
             // 
+            this.miKiteToolStripMenuItem.BackColor = System.Drawing.Color.Moccasin;
             this.miKiteToolStripMenuItem.Name = "miKiteToolStripMenuItem";
-            this.miKiteToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.miKiteToolStripMenuItem.Size = new System.Drawing.Size(221, 34);
             this.miKiteToolStripMenuItem.Text = "Kite";
             this.miKiteToolStripMenuItem.Click += new System.EventHandler(this.miKiteToolStripMenuItem_Click);
             // 
             // miTriangulosToolStripMenuItem
             // 
+            this.miTriangulosToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.miTriangulosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miTriangleToolStripMenuItem,
             this.miRightTriangleToolStripMenuItem,
             this.miScaleneTriangleToolStripMenuItem});
+            this.miTriangulosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.miTriangulosToolStripMenuItem.Name = "miTriangulosToolStripMenuItem";
-            this.miTriangulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.miTriangulosToolStripMenuItem.Size = new System.Drawing.Size(180, 51);
             this.miTriangulosToolStripMenuItem.Text = "Triangles";
             // 
             // miTriangleToolStripMenuItem
             // 
+            this.miTriangleToolStripMenuItem.BackColor = System.Drawing.Color.Honeydew;
             this.miTriangleToolStripMenuItem.Name = "miTriangleToolStripMenuItem";
-            this.miTriangleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.miTriangleToolStripMenuItem.Size = new System.Drawing.Size(244, 34);
             this.miTriangleToolStripMenuItem.Text = "Triangle";
             this.miTriangleToolStripMenuItem.Click += new System.EventHandler(this.miTriangleToolStripMenuItem_Click);
             // 
             // miRightTriangleToolStripMenuItem
             // 
+            this.miRightTriangleToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.miRightTriangleToolStripMenuItem.Name = "miRightTriangleToolStripMenuItem";
-            this.miRightTriangleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.miRightTriangleToolStripMenuItem.Size = new System.Drawing.Size(244, 34);
             this.miRightTriangleToolStripMenuItem.Text = "Right Triangle";
             this.miRightTriangleToolStripMenuItem.Click += new System.EventHandler(this.miRightTriangleToolStripMenuItem_Click);
             // 
             // miScaleneTriangleToolStripMenuItem
             // 
+            this.miScaleneTriangleToolStripMenuItem.BackColor = System.Drawing.Color.Honeydew;
             this.miScaleneTriangleToolStripMenuItem.Name = "miScaleneTriangleToolStripMenuItem";
-            this.miScaleneTriangleToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.miScaleneTriangleToolStripMenuItem.Size = new System.Drawing.Size(244, 34);
             this.miScaleneTriangleToolStripMenuItem.Text = "Scalene Triangle";
             this.miScaleneTriangleToolStripMenuItem.Click += new System.EventHandler(this.miScaleneTriangleToolStripMenuItem_Click);
             // 
             // miPoligonosRegularesToolStripMenuItem
             // 
+            this.miPoligonosRegularesToolStripMenuItem.BackColor = System.Drawing.Color.PaleTurquoise;
             this.miPoligonosRegularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miPentagonToolStripMenuItem,
             this.miHexagonToolStripMenuItem,
@@ -204,54 +223,62 @@
             this.miOctagonToolStripMenuItem,
             this.miNonagonToolStripMenuItem,
             this.miDecagonToolStripMenuItem});
+            this.miPoligonosRegularesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.miPoligonosRegularesToolStripMenuItem.Name = "miPoligonosRegularesToolStripMenuItem";
-            this.miPoligonosRegularesToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.miPoligonosRegularesToolStripMenuItem.Size = new System.Drawing.Size(319, 51);
             this.miPoligonosRegularesToolStripMenuItem.Text = "Regular Polygons";
             // 
             // miPentagonToolStripMenuItem
             // 
+            this.miPentagonToolStripMenuItem.BackColor = System.Drawing.Color.Azure;
             this.miPentagonToolStripMenuItem.Name = "miPentagonToolStripMenuItem";
-            this.miPentagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.miPentagonToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
             this.miPentagonToolStripMenuItem.Text = "Pentagon";
             this.miPentagonToolStripMenuItem.Click += new System.EventHandler(this.miPentagonToolStripMenuItem_Click);
             // 
             // miHexagonToolStripMenuItem
             // 
+            this.miHexagonToolStripMenuItem.BackColor = System.Drawing.Color.PaleTurquoise;
             this.miHexagonToolStripMenuItem.Name = "miHexagonToolStripMenuItem";
-            this.miHexagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.miHexagonToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
             this.miHexagonToolStripMenuItem.Text = "Hexagon";
             this.miHexagonToolStripMenuItem.Click += new System.EventHandler(this.miHexagonToolStripMenuItem_Click);
             // 
             // miHeptagonToolStripMenuItem
             // 
+            this.miHeptagonToolStripMenuItem.BackColor = System.Drawing.Color.Azure;
             this.miHeptagonToolStripMenuItem.Name = "miHeptagonToolStripMenuItem";
-            this.miHeptagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.miHeptagonToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
             this.miHeptagonToolStripMenuItem.Text = "Heptagon";
             this.miHeptagonToolStripMenuItem.Click += new System.EventHandler(this.miHeptagonToolStripMenuItem_Click);
             // 
             // miOctagonToolStripMenuItem
             // 
+            this.miOctagonToolStripMenuItem.BackColor = System.Drawing.Color.PaleTurquoise;
             this.miOctagonToolStripMenuItem.Name = "miOctagonToolStripMenuItem";
-            this.miOctagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.miOctagonToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
             this.miOctagonToolStripMenuItem.Text = "Octagon";
             this.miOctagonToolStripMenuItem.Click += new System.EventHandler(this.miOctagonToolStripMenuItem_Click);
             // 
             // miNonagonToolStripMenuItem
             // 
+            this.miNonagonToolStripMenuItem.BackColor = System.Drawing.Color.Azure;
             this.miNonagonToolStripMenuItem.Name = "miNonagonToolStripMenuItem";
-            this.miNonagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.miNonagonToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
             this.miNonagonToolStripMenuItem.Text = "Nonagon";
             this.miNonagonToolStripMenuItem.Click += new System.EventHandler(this.miNonagonToolStripMenuItem_Click);
             // 
             // miDecagonToolStripMenuItem
             // 
+            this.miDecagonToolStripMenuItem.BackColor = System.Drawing.Color.PaleTurquoise;
             this.miDecagonToolStripMenuItem.Name = "miDecagonToolStripMenuItem";
-            this.miDecagonToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.miDecagonToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
             this.miDecagonToolStripMenuItem.Text = "Decagon";
             this.miDecagonToolStripMenuItem.Click += new System.EventHandler(this.miDecagonToolStripMenuItem_Click);
             // 
             // miFigurasIrregularesToolStripMenuItem
             // 
+            this.miFigurasIrregularesToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.miFigurasIrregularesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miStarToolStripMenuItem,
             this.miHeartToolStripMenuItem,
@@ -259,55 +286,63 @@
             this.miCrossToolStripMenuItem,
             this.miPieToolStripMenuItem,
             this.miArrowToolStripMenuItem});
+            this.miFigurasIrregularesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.miFigurasIrregularesToolStripMenuItem.Name = "miFigurasIrregularesToolStripMenuItem";
-            this.miFigurasIrregularesToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.miFigurasIrregularesToolStripMenuItem.Size = new System.Drawing.Size(302, 51);
             this.miFigurasIrregularesToolStripMenuItem.Text = "Irregular Shapes";
             // 
             // miStarToolStripMenuItem
             // 
+            this.miStarToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.miStarToolStripMenuItem.Name = "miStarToolStripMenuItem";
-            this.miStarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.miStarToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miStarToolStripMenuItem.Text = "Star";
             this.miStarToolStripMenuItem.Click += new System.EventHandler(this.miStarToolStripMenuItem_Click);
             // 
             // miHeartToolStripMenuItem
             // 
+            this.miHeartToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.miHeartToolStripMenuItem.Name = "miHeartToolStripMenuItem";
-            this.miHeartToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.miHeartToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miHeartToolStripMenuItem.Text = "Heart";
             this.miHeartToolStripMenuItem.Click += new System.EventHandler(this.miHeartToolStripMenuItem_Click);
             // 
             // miCrescentToolStripMenuItem
             // 
+            this.miCrescentToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.miCrescentToolStripMenuItem.Name = "miCrescentToolStripMenuItem";
-            this.miCrescentToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.miCrescentToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miCrescentToolStripMenuItem.Text = "Crescent";
             this.miCrescentToolStripMenuItem.Click += new System.EventHandler(this.miCrescentToolStripMenuItem_Click);
             // 
             // miCrossToolStripMenuItem
             // 
+            this.miCrossToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.miCrossToolStripMenuItem.Name = "miCrossToolStripMenuItem";
-            this.miCrossToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.miCrossToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miCrossToolStripMenuItem.Text = "Cross";
             this.miCrossToolStripMenuItem.Click += new System.EventHandler(this.miCrossToolStripMenuItem_Click);
             // 
             // miPieToolStripMenuItem
             // 
+            this.miPieToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.miPieToolStripMenuItem.Name = "miPieToolStripMenuItem";
-            this.miPieToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.miPieToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miPieToolStripMenuItem.Text = "Pie";
             this.miPieToolStripMenuItem.Click += new System.EventHandler(this.miPieToolStripMenuItem_Click);
             // 
             // miArrowToolStripMenuItem
             // 
+            this.miArrowToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.miArrowToolStripMenuItem.Name = "miArrowToolStripMenuItem";
-            this.miArrowToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.miArrowToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.miArrowToolStripMenuItem.Text = "Arrow";
             this.miArrowToolStripMenuItem.Click += new System.EventHandler(this.miArrowToolStripMenuItem_Click);
             // 
             // FrmHome
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;

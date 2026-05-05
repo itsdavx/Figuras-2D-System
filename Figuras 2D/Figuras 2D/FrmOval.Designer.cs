@@ -43,26 +43,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 177);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 115);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 29);
+            this.label4.Size = new System.Drawing.Size(82, 20);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Grafico:";
+            this.label4.Text = "Graphic :";
             // 
             // panelGrafico
             // 
             this.panelGrafico.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelGrafico.Location = new System.Drawing.Point(25, 222);
+            this.panelGrafico.Location = new System.Drawing.Point(17, 144);
+            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelGrafico.Name = "panelGrafico";
-            this.panelGrafico.Size = new System.Drawing.Size(949, 602);
+            this.panelGrafico.Size = new System.Drawing.Size(633, 391);
             this.panelGrafico.TabIndex = 19;
             this.panelGrafico.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGrafico_Paint);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(214, 83);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(191, 50);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 20);
             this.label3.TabIndex = 18;
@@ -70,44 +74,53 @@
             // 
             // btnGraficar
             // 
-            this.btnGraficar.Location = new System.Drawing.Point(250, 131);
+            this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraficar.Location = new System.Drawing.Point(277, 69);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGraficar.Name = "btnGraficar";
-            this.btnGraficar.Size = new System.Drawing.Size(75, 29);
+            this.btnGraficar.Size = new System.Drawing.Size(111, 32);
             this.btnGraficar.TabIndex = 17;
-            this.btnGraficar.Text = "Graficar";
-            this.btnGraficar.UseVisualStyleBackColor = true;
+            this.btnGraficar.Text = "Graph";
+            this.btnGraficar.UseVisualStyleBackColor = false;
             this.btnGraficar.Click += new System.EventHandler(this.btnGraficar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 31);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 29);
+            this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Input:";
             // 
             // txtAltura
             // 
-            this.txtAltura.Location = new System.Drawing.Point(108, 80);
+            this.txtAltura.Location = new System.Drawing.Point(107, 52);
+            this.txtAltura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(100, 26);
+            this.txtAltura.Size = new System.Drawing.Size(68, 20);
             this.txtAltura.TabIndex = 15;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 83);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Altura:";
+            this.label1.Text = "Height :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(214, 134);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(191, 81);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 20);
             this.label5.TabIndex = 23;
@@ -115,26 +128,29 @@
             // 
             // txtAnchura
             // 
-            this.txtAnchura.Location = new System.Drawing.Point(108, 131);
+            this.txtAnchura.Location = new System.Drawing.Point(107, 81);
+            this.txtAnchura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAnchura.Name = "txtAnchura";
-            this.txtAnchura.Size = new System.Drawing.Size(100, 26);
+            this.txtAnchura.Size = new System.Drawing.Size(68, 20);
             this.txtAnchura.TabIndex = 22;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 134);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 87);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.Size = new System.Drawing.Size(58, 20);
             this.label6.TabIndex = 21;
-            this.label6.Text = "Anchura:";
+            this.label6.Text = "Width :";
             // 
             // FrmOval
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(2007, 1326);
+            this.ClientSize = new System.Drawing.Size(913, 487);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAnchura);
             this.Controls.Add(this.label6);
@@ -145,7 +161,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAltura);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "FrmOval";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Oval";

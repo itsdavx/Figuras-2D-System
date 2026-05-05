@@ -18,6 +18,7 @@ namespace Figuras_2D
         private static FrmRightTriangle instancia;
         public FrmRightTriangle()
         {
+         
             InitializeComponent();
         }
         public static FrmRightTriangle Instancia
@@ -89,18 +90,36 @@ namespace Figuras_2D
                 Graphics g = e.Graphics;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                Pen lapiz = new Pen(Color.Blue, 3);
-                SolidBrush brocha = new SolidBrush(Color.FromArgb(100, Color.LightBlue));
+                Pen lapiz = new Pen(Color.Blue, 2);
+                SolidBrush brocha = new SolidBrush(Color.FromArgb(120, Color.LightBlue));
 
-                float escala = 10;
+                float margen = 20;
 
-                float b = (float)baseDibujo * escala;
-                float h = (float)alturaDibujo * escala;
+                float panelW = pnlGrafico.Width - 2 * margen;
+                float panelH = pnlGrafico.Height - 2 * margen;
 
+                float bReal = (float)baseDibujo;
+                float hReal = (float)alturaDibujo;
+
+                // ESCALA AUTOMÁTICA
+                float escala = Math.Min(panelW / bReal, panelH / hReal);
+
+                //CONTROL PARA QUE NO TODO SE VEA IGUAL
+                float escalaMax = 5f;
+                escala = Math.Min(escala, escalaMax);
+
+                //  Ajuste visual
+                escala *= 0.8f;
+
+                // Aplicar escala
+                float b = bReal * escala;
+                float h = hReal * escala;
+
+                // CENTRADO
                 float x = (pnlGrafico.Width - b) / 2;
                 float y = (pnlGrafico.Height + h) / 2;
 
-                // TRIÁNGULO HACIA LA DERECHA
+                // TRIÁNGULO RECTÁNGULO
                 PointF p1 = new PointF(x, y);
                 PointF p2 = new PointF(x + b, y);
                 PointF p3 = new PointF(x + b, y - h);
@@ -109,9 +128,15 @@ namespace Figuras_2D
 
                 g.FillPolygon(brocha, puntos);
                 g.DrawPolygon(lapiz, puntos);
+
+                lapiz.Dispose();
+                brocha.Dispose();
             }
         }
-
+        private void pnlGrafico_Resize(object sender, EventArgs e)
+        {
+            pnlGrafico.Invalidate();
+        }
         private void btnResetear_Click(object sender, EventArgs e)
         {
             // Reiniciar variables globales

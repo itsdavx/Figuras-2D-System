@@ -11,6 +11,9 @@ namespace Figuras_2D
         public FrmRectangle()
         {
             InitializeComponent();
+
+            pnlGrafico.Paint += pnlGrafico_Paint;
+            pnlGrafico.Resize += pnlGrafico_Resize;
         }
 
         public static FrmRectangle Instancia
@@ -32,45 +35,38 @@ namespace Figuras_2D
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            // 1. Declaración de variables
             double ancho, largo, perimetro, area;
 
-            // 2. Validación y Conversión
-            // TryParse intenta convertir el texto a número. Si falla o es negativo, entra al error.
+            // Validación ancho
             if (!double.TryParse(txtAncho.Text, out ancho) || ancho <= 0)
             {
-                MessageBox.Show("Por favor, ingrese un número válido y positivo para el Ancho.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese un valor válido y positivo para el Ancho");
                 txtAncho.Focus();
-                return; // Detiene la ejecución
+                return;
             }
 
+            // Validación largo
             if (!double.TryParse(txtLargo.Text, out largo) || largo <= 0)
             {
-                MessageBox.Show("Por favor, ingrese un número válido y positivo para el Largo.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese un valor válido y positivo para el Largo");
                 txtLargo.Focus();
                 return;
             }
 
-            // 3. Procesamiento (Cálculos)
+            // Cálculos
             perimetro = 2 * (ancho + largo);
             area = ancho * largo;
 
-            // 4. Salida de resultados
-            txtPerimetro.Text = perimetro.ToString("N2"); // "N2" para mostrar 2 decimales
+            // Mostrar resultados
+            txtPerimetro.Text = perimetro.ToString("N2");
             txtArea.Text = area.ToString("N2");
 
-            if (double.TryParse(txtAncho.Text, out anchoDibujo) && double.TryParse(txtLargo.Text, out largoDibujo))
-            {
-                // Realizar cálculos de texto
-                txtPerimetro.Text = (2 * (anchoDibujo + largoDibujo)).ToString("N2");
-                txtArea.Text = (anchoDibujo * largoDibujo).ToString("N2");
+            // Guardar para dibujo
+            anchoDibujo = ancho;
+            largoDibujo = largo;
 
-                // FORZAR AL PANEL A DIBUJAR
-                pnlGrafico.Invalidate();
-            }
-
-            // 5. Llamada al método para dibujar (Opcional si ya lo tienes)
-            DibujarRectangulo(ancho, largo);
+            // Redibujar
+            pnlGrafico.Invalidate();
         }
 
         private void lblPerimetro_Click(object sender, EventArgs e)
@@ -128,23 +124,50 @@ namespace Figuras_2D
             if (anchoDibujo > 0 && largoDibujo > 0)
             {
                 Graphics g = e.Graphics;
-                Pen lapiz = new Pen(Color.Blue, 3); // Rectángulo azul con grosor 3
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                // Factor de escala para que se vea bien (ajusta el 10 según necesites)
-                float escala = 10;
-                float w = (float)anchoDibujo * escala;
-                float h = (float)largoDibujo * escala;
+                Pen lapiz = new Pen(Color.Blue, 2);
+                SolidBrush brocha = new SolidBrush(Color.FromArgb(120, Color.LightBlue));
 
-                // Centrar el dibujo en el panel
+                float margen = 20;
+
+                float panelW = pnlGrafico.Width - 2 * margen;
+                float panelH = pnlGrafico.Height - 2 * margen;
+
+                float wReal = (float)anchoDibujo;
+                float hReal = (float)largoDibujo;
+
+                // ESCALA BASE
+                float escala = Math.Min(panelW / wReal, panelH / hReal);
+
+                // CONTROL PARA QUE SE NOTE EL TAMAÑO
+                float escalaMax = 5f;   // evita que todo se vea gigante
+                escala = Math.Min(escala, escalaMax);
+
+                // ajuste visual (opcional pero recomendado)
+                escala *= 0.8f;
+
+                // Aplicar escala
+                float w = wReal * escala;
+                float h = hReal * escala;
+
+                // CENTRADO
                 float x = (pnlGrafico.Width - w) / 2;
                 float y = (pnlGrafico.Height - h) / 2;
 
+                // Dibujar
+                g.FillRectangle(brocha, x, y, w, h);
                 g.DrawRectangle(lapiz, x, y, w, h);
 
-                // Opcional: Rellenar con un color suave
-                SolidBrush brocha = new SolidBrush(Color.FromArgb(100, Color.LightBlue));
-                g.FillRectangle(brocha, x, y, w, h);
+                lapiz.Dispose();
+                brocha.Dispose();
             }
         }
+        private void pnlGrafico_Resize(object sender, EventArgs e)
+        {
+            pnlGrafico.Invalidate();
+        }
+
     }
 }
+

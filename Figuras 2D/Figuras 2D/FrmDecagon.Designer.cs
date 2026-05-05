@@ -46,38 +46,40 @@
             // 
             // pnlGrafico
             // 
-            this.pnlGrafico.Location = new System.Drawing.Point(85, 278);
+            this.pnlGrafico.BackColor = System.Drawing.Color.White;
+            this.pnlGrafico.Location = new System.Drawing.Point(360, 45);
             this.pnlGrafico.Name = "pnlGrafico";
-            this.pnlGrafico.Size = new System.Drawing.Size(584, 481);
+            this.pnlGrafico.Size = new System.Drawing.Size(637, 515);
             this.pnlGrafico.TabIndex = 63;
             this.pnlGrafico.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGrafico_Paint);
             // 
             // lblGrafico
             // 
             this.lblGrafico.AutoSize = true;
-            this.lblGrafico.Location = new System.Drawing.Point(85, 262);
+            this.lblGrafico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrafico.Location = new System.Drawing.Point(356, 20);
             this.lblGrafico.Name = "lblGrafico";
-            this.lblGrafico.Size = new System.Drawing.Size(50, 13);
+            this.lblGrafico.Size = new System.Drawing.Size(82, 20);
             this.lblGrafico.TabIndex = 62;
             this.lblGrafico.Text = "Graphic :";
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(148, 227);
+            this.txtArea.Location = new System.Drawing.Point(183, 392);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(100, 20);
             this.txtArea.TabIndex = 61;
             // 
             // txtPerimetro
             // 
-            this.txtPerimetro.Location = new System.Drawing.Point(148, 183);
+            this.txtPerimetro.Location = new System.Drawing.Point(183, 348);
             this.txtPerimetro.Name = "txtPerimetro";
             this.txtPerimetro.Size = new System.Drawing.Size(100, 20);
             this.txtPerimetro.TabIndex = 60;
             // 
             // txtLado
             // 
-            this.txtLado.Location = new System.Drawing.Point(148, 45);
+            this.txtLado.Location = new System.Drawing.Point(183, 54);
             this.txtLado.Name = "txtLado";
             this.txtLado.Size = new System.Drawing.Size(100, 20);
             this.txtLado.TabIndex = 59;
@@ -85,84 +87,96 @@
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(85, 234);
+            this.lblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArea.Location = new System.Drawing.Point(85, 392);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(35, 13);
+            this.lblArea.Size = new System.Drawing.Size(51, 20);
             this.lblArea.TabIndex = 58;
             this.lblArea.Text = "Area :";
             // 
             // lblPerimetro
             // 
             this.lblPerimetro.AutoSize = true;
-            this.lblPerimetro.Location = new System.Drawing.Point(83, 183);
+            this.lblPerimetro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerimetro.Location = new System.Drawing.Point(83, 348);
             this.lblPerimetro.Name = "lblPerimetro";
-            this.lblPerimetro.Size = new System.Drawing.Size(57, 13);
+            this.lblPerimetro.Size = new System.Drawing.Size(85, 20);
             this.lblPerimetro.TabIndex = 57;
             this.lblPerimetro.Text = "Perimeter :";
             // 
             // lblSalida
             // 
             this.lblSalida.AutoSize = true;
-            this.lblSalida.Location = new System.Drawing.Point(83, 148);
+            this.lblSalida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalida.Location = new System.Drawing.Point(83, 313);
             this.lblSalida.Name = "lblSalida";
-            this.lblSalida.Size = new System.Drawing.Size(50, 13);
+            this.lblSalida.Size = new System.Drawing.Size(83, 20);
             this.lblSalida.TabIndex = 56;
             this.lblSalida.Text = "Outputs :";
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(303, 112);
+            this.btnSalir.BackColor = System.Drawing.Color.Thistle;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(88, 261);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(102, 39);
             this.btnSalir.TabIndex = 55;
             this.btnSalir.Text = "Exit";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnResetear
             // 
-            this.btnResetear.Location = new System.Drawing.Point(188, 112);
+            this.btnResetear.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnResetear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetear.Location = new System.Drawing.Point(89, 197);
             this.btnResetear.Name = "btnResetear";
-            this.btnResetear.Size = new System.Drawing.Size(75, 23);
+            this.btnResetear.Size = new System.Drawing.Size(101, 40);
             this.btnResetear.TabIndex = 54;
             this.btnResetear.Text = "Reset";
-            this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.UseVisualStyleBackColor = false;
             this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(85, 112);
+            this.btnCalcular.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcular.Location = new System.Drawing.Point(89, 128);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.Size = new System.Drawing.Size(101, 44);
             this.btnCalcular.TabIndex = 53;
             this.btnCalcular.Text = "Calculate";
-            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.UseVisualStyleBackColor = false;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // lblProceso
             // 
             this.lblProceso.AutoSize = true;
-            this.lblProceso.Location = new System.Drawing.Point(89, 85);
+            this.lblProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProceso.Location = new System.Drawing.Point(85, 89);
             this.lblProceso.Name = "lblProceso";
-            this.lblProceso.Size = new System.Drawing.Size(51, 13);
+            this.lblProceso.Size = new System.Drawing.Size(83, 20);
             this.lblProceso.TabIndex = 52;
             this.lblProceso.Text = "Process :";
             // 
             // lblLado
             // 
             this.lblLado.AutoSize = true;
+            this.lblLado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLado.Location = new System.Drawing.Point(85, 52);
             this.lblLado.Name = "lblLado";
-            this.lblLado.Size = new System.Drawing.Size(49, 13);
+            this.lblLado.Size = new System.Drawing.Size(72, 20);
             this.lblLado.TabIndex = 51;
             this.lblLado.Text = "Side (L) :";
             // 
             // lblEntradas
             // 
             this.lblEntradas.AutoSize = true;
+            this.lblEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntradas.Location = new System.Drawing.Point(82, 20);
             this.lblEntradas.Name = "lblEntradas";
-            this.lblEntradas.Size = new System.Drawing.Size(42, 13);
+            this.lblEntradas.Size = new System.Drawing.Size(70, 20);
             this.lblEntradas.TabIndex = 50;
             this.lblEntradas.Text = "Inputs :";
             // 

@@ -41,26 +41,33 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 98);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(39, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gráfico:";
+            this.label1.Text = "Graphic :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 18);
+            this.label2.Location = new System.Drawing.Point(39, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Inputs:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(78, 58);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(47, 47);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 3;
@@ -68,24 +75,29 @@
             // 
             // txtRadio
             // 
-            this.txtRadio.Location = new System.Drawing.Point(131, 55);
+            this.txtRadio.Location = new System.Drawing.Point(98, 45);
+            this.txtRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRadio.Name = "txtRadio";
-            this.txtRadio.Size = new System.Drawing.Size(52, 22);
+            this.txtRadio.Size = new System.Drawing.Size(40, 20);
             this.txtRadio.TabIndex = 4;
             // 
             // btnGraficar
             // 
-            this.btnGraficar.Location = new System.Drawing.Point(266, 55);
+            this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGraficar.Location = new System.Drawing.Point(223, 38);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGraficar.Name = "btnGraficar";
-            this.btnGraficar.Size = new System.Drawing.Size(75, 23);
+            this.btnGraficar.Size = new System.Drawing.Size(96, 27);
             this.btnGraficar.TabIndex = 5;
-            this.btnGraficar.Text = "Graficar";
-            this.btnGraficar.UseVisualStyleBackColor = true;
+            this.btnGraficar.Text = "Graph";
+            this.btnGraficar.UseVisualStyleBackColor = false;
             this.btnGraficar.Click += new System.EventHandler(this.btnGraficar_Click);
             // 
             // PanelGrafico
             // 
-            this.PanelGrafico.Location = new System.Drawing.Point(44, 138);
+            this.PanelGrafico.Location = new System.Drawing.Point(33, 112);
+            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelGrafico.Name = "PanelGrafico";
             this.PanelGrafico.Size = new System.Drawing.Size(0, 0);
             this.PanelGrafico.TabIndex = 6;
@@ -94,7 +106,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 58);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(142, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 16);
             this.label4.TabIndex = 7;
@@ -102,10 +116,10 @@
             // 
             // FrmCircle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1784, 1061);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.PanelGrafico);
             this.Controls.Add(this.btnGraficar);
@@ -113,10 +127,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmCircle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Circle";
+            this.Load += new System.EventHandler(this.FrmCircle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

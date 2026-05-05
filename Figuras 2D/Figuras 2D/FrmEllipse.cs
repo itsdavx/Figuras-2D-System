@@ -88,5 +88,10 @@ namespace Figuras_2D
 
             return true;
         }
+
+        private void btnGraficar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
