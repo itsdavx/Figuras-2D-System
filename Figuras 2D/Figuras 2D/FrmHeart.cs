@@ -48,13 +48,32 @@ namespace Figuras_2D
         // mover figura con teclado
         private void FrmHeart_KeyDown(object sender, KeyEventArgs e)
         {
+            // MOVER
             moverFigura.Mover(e);
 
             if (heart != null)
             {
-                float tamanoCm = float.Parse(txtTamano.Text);
+                // GUARDAR ROTACIÓN
+                float rotacionActual =
+                    heart.Rotation;
 
-                int tamanoPx = (int)(tamanoCm * 58f);
+                // ROTAR IZQUIERDA
+                if (e.KeyCode == Keys.A)
+                {
+                    rotacionActual -= 5;
+                }
+
+                // ROTAR DERECHA
+                if (e.KeyCode == Keys.D)
+                {
+                    rotacionActual += 5;
+                }
+
+                float tamanoCm =
+                    float.Parse(txtTamano.Text);
+
+                int tamanoPx =
+                    (int)(tamanoCm * 58f);
 
                 heart = new Heart(
                     10 + moverFigura.X,
@@ -63,6 +82,10 @@ namespace Figuras_2D
                     new Pen(Color.Black, 2),
                     new SolidBrush(Color.Red)
                 );
+
+                // RECUPERAR ROTACIÓN
+                heart.Rotation =
+                    rotacionActual;
             }
 
             PanelGrafico.Invalidate();
