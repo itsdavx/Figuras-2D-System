@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figuras_2D.Transformaciones
 {
-    internal class Zoom
+    internal class Traslation
     {
     }
 }

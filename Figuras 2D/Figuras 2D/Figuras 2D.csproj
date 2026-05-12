@@ -209,6 +209,9 @@
     <Compile Include="Shapes\Rhombus.cs" />
     <Compile Include="Shapes\Shape.cs" />
     <Compile Include="Shapes\Star.cs" />
+    <Compile Include="Transformaciones\Rotate.cs" />
+    <Compile Include="Transformaciones\Traslation.cs" />
+    <Compile Include="Transformaciones\Zoom.cs" />
     <EmbeddedResource Include="FrmArrow.resx">
       <DependentUpon>FrmArrow.cs</DependentUpon>
     </EmbeddedResource>
