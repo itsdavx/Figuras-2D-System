@@ -1,43 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Figuras_2D.Shapes;
+using System.Drawing;
 
 namespace Figuras_2D.Transformaciones
 {
-    public class Rotate
+    public static class Rotate
     {
-        private readonly Shape shape;
-        private readonly Panel panel;
-
-        public Rotate(Shape shape, Panel panel, Form form)
+        public static Point Rotar(
+            Point punto,
+            Point centro,
+            float angulo
+        )
         {
-            this.shape = shape;
-            this.panel = panel;
+            // GRADOS A RADIANES
+            double theta = angulo * Math.PI / 180.0;
 
-            // Captura teclas del formulario
-            form.KeyPreview = true;
-            form.KeyDown += Form_KeyDown;
-        }
+            // TRASLADAR AL ORIGEN
+            double x = punto.X - centro.X;
 
-        private void Form_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (shape == null)
-                return;
+            double y = punto.Y - centro.Y;
 
-            if (e.KeyCode == Keys.A)
-            {
-                shape.Rotation -= 5;
-                panel.Invalidate();
-            }
-            else if (e.KeyCode == Keys.D)
-            {
-                shape.Rotation += 5;
-                panel.Invalidate();
-            }
+            // ROTACIÓN ANTIHORARIA
+            double xr =
+                (x * Math.Cos(theta))
+                - (y * Math.Sin(theta));
+
+            double yr =
+                (x * Math.Sin(theta))
+                + (y * Math.Cos(theta));
+
+            // REGRESAR A POSICIÓN ORIGINAL
+            int xFinal = (int)(xr + centro.X);
+
+            int yFinal = (int)(yr + centro.Y);
+
+            return new Point(xFinal, yFinal);
         }
     }
 }
