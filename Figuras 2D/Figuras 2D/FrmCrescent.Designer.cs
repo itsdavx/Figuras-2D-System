@@ -51,7 +51,7 @@
             // txtRadio
             // 
             this.txtRadio.Location = new System.Drawing.Point(116, 73);
-            this.txtRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRadio.Margin = new System.Windows.Forms.Padding(2);
             this.txtRadio.Name = "txtRadio";
             this.txtRadio.Size = new System.Drawing.Size(68, 20);
             this.txtRadio.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(267, 70);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             this.panelGrafico.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelGrafico.Location = new System.Drawing.Point(53, 136);
-            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.panelGrafico.Name = "panelGrafico";
             this.panelGrafico.Size = new System.Drawing.Size(633, 391);
             this.panelGrafico.TabIndex = 5;
@@ -128,6 +128,7 @@
             this.Name = "FrmCrescent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crescent";
+            this.Load += new System.EventHandler(this.FrmCrescent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

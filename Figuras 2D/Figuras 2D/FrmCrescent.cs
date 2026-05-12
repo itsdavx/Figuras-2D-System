@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Figuras_2D.Transformaciones;
 
 namespace Figuras_2D
 {
@@ -114,6 +115,11 @@ namespace Figuras_2D
             g.DrawArc(pen, x, y, tamanoPx, tamanoPx,71, 218);
             // Elipse interior
             g.DrawArc(pen, x + tamanoPx / 3, y, tamanoPx, tamanoPx, 110, 140);
+        }
+
+        private void FrmCrescent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
