@@ -22,7 +22,7 @@ namespace Figuras_2D.Shapes
             Point[] puntos = new Point[10];
 
             double angulo = -Math.PI / 2;
-            double incremento = Math.PI / 5; // 36 grados
+            double incremento = Math.PI / 5;
 
             int radioExterno = Tamano;
             int radioInterno = Tamano / 2;
@@ -42,8 +42,14 @@ namespace Figuras_2D.Shapes
                 angulo += incremento;
             }
 
+            g.TranslateTransform(centroX, centroY);
+            g.RotateTransform(Rotation);
+            g.TranslateTransform(-centroX, -centroY);
+
             g.FillPolygon(Brush, puntos);
             g.DrawPolygon(Pen, puntos);
+
+            g.ResetTransform();
         }
     }
 }

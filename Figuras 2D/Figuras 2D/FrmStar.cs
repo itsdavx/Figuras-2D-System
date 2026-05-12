@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Figuras_2D.Shapes;
+using Figuras_2D.Transformaciones;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Figuras_2D.Shapes;
 
 namespace Figuras_2D
 {
@@ -10,7 +11,7 @@ namespace Figuras_2D
         private static FrmStar instancia;
 
         private Star star;
-
+        private Rotate rotate;
         private FrmStar()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace Figuras_2D
             int y = 10;
 
             star = new Star( x, y, tamanoPx, new Pen(Color.Black, 2), new SolidBrush(Color.Cyan));
+            rotate = new Rotate(star, PanelGrafico, this);
 
             PanelGrafico.Invalidate();
         }
