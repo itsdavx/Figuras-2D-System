@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,10 @@ namespace Figuras_2D
         public FrmKite()
         {
             InitializeComponent();
+
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmKite_KeyDown;
         }
 
         public static FrmKite Instancia
@@ -31,9 +36,22 @@ namespace Figuras_2D
             }
         }
 
+        // Evento del teclado
+        private void FrmKite_KeyDown( object sender, KeyEventArgs e)
+        {
+            if (!dibujar)
+                return;
+
+            zoom.AplicarZoom(e);
+
+            panelGrafico.Invalidate();
+        }
 
         float d1Cm, d2Cm;
         bool dibujar = false;
+
+        Zoom zoom = new Zoom();
+
 
         private void panelGrafico_Paint(object sender, PaintEventArgs e)
         {
@@ -55,19 +73,49 @@ namespace Figuras_2D
             int x = (panelGrafico.Width - d2Px) / 2;
             int y = (panelGrafico.Height - alturaTotal) / 2;
 
-            Point[] puntos = new Point[]
+            PointF[] puntos = new PointF[]
             {
-        new Point(x + d2Px / 2, y),
-        new Point(x + d2Px, y + arriba),
-        new Point(x + d2Px / 2, y + alturaTotal),
-        new Point(x, y + arriba)
+                new PointF(x + d2Px / 2, y),
+
+                new PointF(x + d2Px, y + arriba),
+
+                new PointF(x + d2Px / 2, y + alturaTotal),
+
+                new PointF(x, y + arriba)
             };
 
-            g.FillPolygon(Brushes.MediumPurple, puntos);
+            PointF centro = new PointF(
+                x + d2Px / 2,
+                y + alturaTotal / 2
+            );
+
+            PointF[] escalados =
+    new PointF[puntos.Length];
+
+            for (int i = 0; i < puntos.Length; i++)
+            {
+                float nuevoX =
+                    centro.X +
+                    (puntos[i].X - centro.X)
+                    * zoom.Escalar;
+
+                float nuevoY =
+                    centro.Y +
+                    (puntos[i].Y - centro.Y)
+                    * zoom.Escalar;
+
+                escalados[i] =
+                    new PointF(nuevoX, nuevoY);
+            }
+
+
+            g.FillPolygon(
+              Brushes.MediumPurple,
+              escalados);
 
             using (Pen pen = new Pen(Color.Black, 2))
             {
-                g.DrawPolygon(pen, puntos);
+                g.DrawPolygon(pen, escalados);
             }
 
         }
@@ -119,6 +167,13 @@ namespace Figuras_2D
             }
 
             return true;
+        }
+
+        private void FrmKite_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            zoom.AplicarZoom(e);
+
+            panelGrafico.Invalidate();
         }
 
         private void btnGraficar_Click(object sender, EventArgs e)
