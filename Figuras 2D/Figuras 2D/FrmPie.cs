@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,23 @@ namespace Figuras_2D
     public partial class Angle : Form
     {
         private static Angle instancia;
+
+        // clase de traslacion
+        private Traslation moverFigura;
+
         public Angle()
         {
             InitializeComponent();
+
+            // inicializar traslacion
+            moverFigura = new Traslation(0, 0);
+
+            // activar teclado
+            this.KeyPreview = true;
+
+            this.KeyDown += Angle_KeyDown;
         }
+
         public static Angle Instancia
         {
             get
@@ -29,12 +43,20 @@ namespace Figuras_2D
             }
         }
 
-        private void FrmPie_Load(object sender, EventArgs e)
+        // mover figura con teclado
+        private void Angle_KeyDown(object sender, KeyEventArgs e)
         {
+            moverFigura.Mover(e);
 
+            pnlGrafico.Invalidate();
         }
 
-        // VARIABLES GLOBALES (declararlas arriba de la clase)
+        private void FrmPie_Load(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
+
+        // variables globales
         private double radio = 0;
         private double angulo = 0;
         private double area = 0;
@@ -42,7 +64,7 @@ namespace Figuras_2D
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            // Validar campos vacíos
+            // validar campos vacios
             if (txtRadio.Text.Trim() == "" || txtAngulo.Text.Trim() == "")
             {
                 MessageBox.Show("Complete todos los campos.",
@@ -52,18 +74,18 @@ namespace Figuras_2D
                 return;
             }
 
-            // Validar números
+            // validar numeros
             if (!double.TryParse(txtRadio.Text, out radio) ||
                 !double.TryParse(txtAngulo.Text, out angulo))
             {
-                MessageBox.Show("Ingrese solo números válidos.",
+                MessageBox.Show("Ingrese solo numeros validos.",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return;
             }
 
-            // Validar positivos
+            // validar positivos
             if (radio <= 0)
             {
                 MessageBox.Show("El radio debe ser mayor que cero.",
@@ -74,10 +96,10 @@ namespace Figuras_2D
                 return;
             }
 
-            // Validar ángulo
+            // validar angulo
             if (angulo <= 0 || angulo > 360)
             {
-                MessageBox.Show("El ángulo debe estar entre 1 y 360 grados.",
+                MessageBox.Show("El angulo debe estar entre 1 y 360 grados.",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
@@ -85,7 +107,7 @@ namespace Figuras_2D
                 return;
             }
 
-            // Cálculos
+            // calculos
             area = (angulo / 360.0) * Math.PI * Math.Pow(radio, 2);
 
             double arco = (angulo / 360.0) * (2 * Math.PI * radio);
@@ -110,18 +132,18 @@ namespace Figuras_2D
 
                 float diametro = (float)radio * 6f;
 
-                // Ajustar tamaño al panel
+                // ajustar tamaño al panel
                 if (diametro > pnlGrafico.Width - 20)
                     diametro = pnlGrafico.Width - 20;
 
                 if (diametro > pnlGrafico.Height - 20)
                     diametro = pnlGrafico.Height - 20;
 
-                // CENTRADO TOTAL
-                float x = (pnlGrafico.Width - diametro) / 2;
-                float y = (pnlGrafico.Height - diametro) / 2;
+                // centrado total
+                float x = ((pnlGrafico.Width - diametro) / 2) + moverFigura.X;
+                float y = ((pnlGrafico.Height - diametro) / 2) + moverFigura.Y;
 
-                float inicioHueco = 270f; // arriba
+                float inicioHueco = 270f;
                 float inicio = inicioHueco + (float)angulo;
                 float barrido = 360f - (float)angulo;
 
@@ -129,7 +151,6 @@ namespace Figuras_2D
                 g.DrawPie(lapiz, x, y, diametro, diametro, inicio, barrido);
             }
         }
-        
 
         private void btnResetear_Click(object sender, EventArgs e)
         {
