@@ -7,18 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Figuras_2D.Transformaciones;
 
 namespace Figuras_2D
 {
     public partial class FrmArrow : Form
     {
         private static FrmArrow instancia;
+
         float largo, ancho, lado;
+
         bool dibujar = false;
+
+        // OBJETO DE TRASLACIÓN
+        Traslation moverFigura;
+
         public FrmArrow()
         {
             InitializeComponent();
+
+            // POSICIÓN INICIAL
+            moverFigura = new Traslation(0, 0);
+
+            // ACTIVAR TECLADO
+            this.KeyPreview = true;
+            this.KeyDown += FrmArrow_KeyDown;
         }
+
         public static FrmArrow Instancia
         {
             get
@@ -29,6 +44,14 @@ namespace Figuras_2D
                 }
                 return instancia;
             }
+        }
+
+        // EVENTO DEL TECLADO
+        private void FrmArrow_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            pnlGrafico.Invalidate();
         }
 
         private void lblBase_Click(object sender, EventArgs e)
@@ -59,7 +82,7 @@ namespace Figuras_2D
                 ancho = float.Parse(txtAnchoDelCuerpo.Text);
                 lado = float.Parse(txtLadoDelTrianguloEquilatero.Text);
 
-                // VALIDACIÓN: valores positivos
+                // VALIDACIÓN
                 if (largo <= 0 || ancho <= 0 || lado <= 0)
                 {
                     MessageBox.Show("Todos los valores deben ser mayores a cero",
@@ -69,7 +92,6 @@ namespace Figuras_2D
                     return;
                 }
 
-                // 🔥 VALIDACIÓN MEJORADA DEL TRIÁNGULO
                 if (lado <= Math.Max(largo, ancho))
                 {
                     MessageBox.Show("El lado del triángulo debe ser mayor que el largo y el ancho del cuerpo.",
@@ -87,6 +109,7 @@ namespace Figuras_2D
                 txtPerimetro.Text = perimetro.ToString("0.00");
 
                 dibujar = true;
+
                 pnlGrafico.Invalidate();
             }
             catch
@@ -103,13 +126,15 @@ namespace Figuras_2D
             if (!dibujar) return;
 
             Graphics g = e.Graphics;
+
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             float margen = 20;
+
             float panelW = pnlGrafico.Width - 2 * margen;
             float panelH = pnlGrafico.Height - 2 * margen;
 
-            // Medidas reales
+            // MEDIDAS
             float rectL = largo;
             float rectA = ancho;
             float triL = lado;
@@ -119,8 +144,9 @@ namespace Figuras_2D
             float totalW = rectL + alturaTriangulo;
             float totalH = triL;
 
-            // Escala
+            // ESCALA
             float escala = Math.Min(panelW / totalW, panelH / totalH);
+
             escala *= 0.9f;
 
             rectL *= escala;
@@ -140,30 +166,46 @@ namespace Figuras_2D
             float yTriTop = yCentro - triL / 2;
             float yTriBottom = yCentro + triL / 2;
 
-            // POLÍGONO COMPLETO DE LA FLECHA
+            // FLECHA CON TRASLACIÓN
             PointF[] puntos = new PointF[]
             {
-        new PointF(xInicio, yTop),                          // izquierda arriba
-        new PointF(xInicio + rectL, yTop),                  // unión arriba
-        new PointF(xInicio + rectL, yTriTop),               // inicio triángulo arriba
-        new PointF(xInicio + rectL + alturaTriangulo, yCentro), // punta
-        new PointF(xInicio + rectL, yTriBottom),            // triángulo abajo
-        new PointF(xInicio + rectL, yBottom),               // unión abajo
-        new PointF(xInicio, yBottom)                        // izquierda abajo
+                new PointF(xInicio + moverFigura.X,
+                           yTop + moverFigura.Y),
+
+                new PointF(xInicio + rectL + moverFigura.X,
+                           yTop + moverFigura.Y),
+
+                new PointF(xInicio + rectL + moverFigura.X,
+                           yTriTop + moverFigura.Y),
+
+                new PointF(xInicio + rectL + alturaTriangulo + moverFigura.X,
+                           yCentro + moverFigura.Y),
+
+                new PointF(xInicio + rectL + moverFigura.X,
+                           yTriBottom + moverFigura.Y),
+
+                new PointF(xInicio + rectL + moverFigura.X,
+                           yBottom + moverFigura.Y),
+
+                new PointF(xInicio + moverFigura.X,
+                           yBottom + moverFigura.Y)
             };
 
             Brush relleno = new SolidBrush(Color.FromArgb(45, 170, 225));
+
             Pen borde = new Pen(Color.FromArgb(20, 40, 80), 2);
 
             g.FillPolygon(relleno, puntos);
+
             g.DrawPolygon(borde, puntos);
 
             relleno.Dispose();
             borde.Dispose();
         }
+
         private void FrmArrow_Load(object sender, EventArgs e)
         {
-
+            this.Focus();
         }
 
         private void lblEntradas_Click(object sender, EventArgs e)
@@ -181,6 +223,7 @@ namespace Figuras_2D
             txtPerimetro.Clear();
 
             dibujar = false;
+
             pnlGrafico.Invalidate();
         }
 
