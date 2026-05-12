@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,23 @@ namespace Figuras_2D
         // VARIABLES GLOBALES PARA EL DIBUJO
         private double baseDibujo = 0;
         private double alturaDibujo = 0;
+
+        // TRASLACION
+        private Traslation moverFigura = new Traslation(0, 0);
+
         private static FrmRightTriangle instancia;
+
         public FrmRightTriangle()
         {
-         
             InitializeComponent();
+
+            // ACTIVAR TECLADO
+            this.KeyPreview = true;
+
+            // EVENTO TECLADO
+            this.KeyDown += FrmRightTriangle_KeyDown;
         }
+
         public static FrmRightTriangle Instancia
         {
             get
@@ -31,6 +43,14 @@ namespace Figuras_2D
                 }
                 return instancia;
             }
+        }
+
+        // MOVIMIENTO CON FLECHAS
+        private void FrmRightTriangle_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            pnlGrafico.Invalidate();
         }
 
         private void lblLargo_Click(object sender, EventArgs e)
@@ -108,16 +128,16 @@ namespace Figuras_2D
                 float escalaMax = 5f;
                 escala = Math.Min(escala, escalaMax);
 
-                //  Ajuste visual
+                // Ajuste visual
                 escala *= 0.8f;
 
                 // Aplicar escala
                 float b = bReal * escala;
                 float h = hReal * escala;
 
-                // CENTRADO
-                float x = (pnlGrafico.Width - b) / 2;
-                float y = (pnlGrafico.Height + h) / 2;
+                // CENTRADO + TRASLACION
+                float x = ((pnlGrafico.Width - b) / 2) + moverFigura.X;
+                float y = ((pnlGrafico.Height + h) / 2) + moverFigura.Y;
 
                 // TRIÁNGULO RECTÁNGULO
                 PointF p1 = new PointF(x, y);
@@ -133,15 +153,20 @@ namespace Figuras_2D
                 brocha.Dispose();
             }
         }
+
         private void pnlGrafico_Resize(object sender, EventArgs e)
         {
             pnlGrafico.Invalidate();
         }
+
         private void btnResetear_Click(object sender, EventArgs e)
         {
             // Reiniciar variables globales
             baseDibujo = 0;
             alturaDibujo = 0;
+
+            // REINICIAR TRASLACION
+            moverFigura = new Traslation(0, 0);
 
             // Limpiar cajas de texto
             txtBase.Clear();
@@ -229,7 +254,7 @@ namespace Figuras_2D
 
         private void FrmRightTriangle_Load(object sender, EventArgs e)
         {
-
+            this.Focus();
         }
     }
 }

@@ -67,7 +67,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(297, 64);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(104, 31);
             this.btnGraficar.TabIndex = 9;
@@ -99,7 +99,7 @@
             // PanelGrafico
             // 
             this.PanelGrafico.Location = new System.Drawing.Point(21, 176);
-            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.PanelGrafico.Name = "PanelGrafico";
             this.PanelGrafico.Size = new System.Drawing.Size(0, 0);
             this.PanelGrafico.TabIndex = 16;
@@ -107,7 +107,7 @@
             // txtDiagonal1
             // 
             this.txtDiagonal1.Location = new System.Drawing.Point(193, 54);
-            this.txtDiagonal1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiagonal1.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiagonal1.Name = "txtDiagonal1";
             this.txtDiagonal1.Size = new System.Drawing.Size(40, 20);
             this.txtDiagonal1.TabIndex = 17;
@@ -115,7 +115,7 @@
             // txtDiagonal2
             // 
             this.txtDiagonal2.Location = new System.Drawing.Point(193, 86);
-            this.txtDiagonal2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiagonal2.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiagonal2.Name = "txtDiagonal2";
             this.txtDiagonal2.Size = new System.Drawing.Size(40, 20);
             this.txtDiagonal2.TabIndex = 18;
@@ -161,6 +161,7 @@
             this.Name = "FrmRhombus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rhombus";
+            this.Load += new System.EventHandler(this.FrmRhombus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

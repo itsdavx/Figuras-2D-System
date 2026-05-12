@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,13 +8,26 @@ namespace Figuras_2D
     public partial class FrmRectangle : Form
     {
         private static FrmRectangle instancia;
-        private double anchoDibujo, largoDibujo; // Añadido para almacenar dimensiones de dibujo
+
+        private double anchoDibujo, largoDibujo;
+
+        // clase de traslacion
+        private Traslation moverFigura;
+
         public FrmRectangle()
         {
             InitializeComponent();
 
             pnlGrafico.Paint += pnlGrafico_Paint;
             pnlGrafico.Resize += pnlGrafico_Resize;
+
+            // inicializar traslacion
+            moverFigura = new Traslation(0, 0);
+
+            // activar teclado
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmRectangle_KeyDown;
         }
 
         public static FrmRectangle Instancia
@@ -28,44 +42,52 @@ namespace Figuras_2D
             }
         }
 
+        // mover figura con teclado
+        private void FrmRectangle_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            pnlGrafico.Invalidate();
+        }
+
         private void FrmRectangle_Load(object sender, EventArgs e)
         {
-
+            this.Focus();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             double ancho, largo, perimetro, area;
 
-            // Validación ancho
+            // validacion ancho
             if (!double.TryParse(txtAncho.Text, out ancho) || ancho <= 0)
             {
-                MessageBox.Show("Ingrese un valor válido y positivo para el Ancho");
+                MessageBox.Show("Ingrese un valor valido y positivo para el ancho");
                 txtAncho.Focus();
                 return;
             }
 
-            // Validación largo
+            // validacion largo
             if (!double.TryParse(txtLargo.Text, out largo) || largo <= 0)
             {
-                MessageBox.Show("Ingrese un valor válido y positivo para el Largo");
+                MessageBox.Show("Ingrese un valor valido y positivo para el largo");
                 txtLargo.Focus();
                 return;
             }
 
-            // Cálculos
+            // calculos
             perimetro = 2 * (ancho + largo);
             area = ancho * largo;
 
-            // Mostrar resultados
+            // mostrar resultados
             txtPerimetro.Text = perimetro.ToString("N2");
             txtArea.Text = area.ToString("N2");
 
-            // Guardar para dibujo
+            // guardar para dibujo
             anchoDibujo = ancho;
             largoDibujo = largo;
 
-            // Redibujar
+            // redibujar
             pnlGrafico.Invalidate();
         }
 
@@ -84,34 +106,27 @@ namespace Figuras_2D
 
         }
 
-        // Añadido: Implementación del método que faltaba
         private void DibujarRectangulo(double ancho, double largo)
         {
-            // Guardar las dimensiones para que el Paint las use
             anchoDibujo = ancho;
             largoDibujo = largo;
 
-            // Forzar repintado del panel
             if (pnlGrafico != null)
                 pnlGrafico.Invalidate();
         }
 
         private void btnResetear_Click(object sender, EventArgs e)
         {
-            // Limpiar variables del dibujo
             anchoDibujo = 0;
             largoDibujo = 0;
 
-            // Limpiar cajas de texto
             txtAncho.Clear();
             txtLargo.Clear();
             txtPerimetro.Clear();
             txtArea.Clear();
 
-            // Limpiar panel gráfico
             pnlGrafico.Refresh();
 
-            // Regresar cursor al inicio
             txtAncho.Focus();
         }
 
@@ -119,55 +134,74 @@ namespace Figuras_2D
         {
             this.Close();
         }
+
         private void pnlGrafico_Paint(object sender, PaintEventArgs e)
         {
             if (anchoDibujo > 0 && largoDibujo > 0)
             {
                 Graphics g = e.Graphics;
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                g.SmoothingMode =
+                    System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
                 Pen lapiz = new Pen(Color.Blue, 2);
-                SolidBrush brocha = new SolidBrush(Color.FromArgb(120, Color.LightBlue));
+
+                SolidBrush brocha =
+                    new SolidBrush(
+                        Color.FromArgb(120, Color.LightBlue));
 
                 float margen = 20;
 
-                float panelW = pnlGrafico.Width - 2 * margen;
-                float panelH = pnlGrafico.Height - 2 * margen;
+                float panelW =
+                    pnlGrafico.Width - 2 * margen;
+
+                float panelH =
+                    pnlGrafico.Height - 2 * margen;
 
                 float wReal = (float)anchoDibujo;
+
                 float hReal = (float)largoDibujo;
 
-                // ESCALA BASE
-                float escala = Math.Min(panelW / wReal, panelH / hReal);
+                // escala base
+                float escala =
+                    Math.Min(panelW / wReal,
+                             panelH / hReal);
 
-                // CONTROL PARA QUE SE NOTE EL TAMAÑO
-                float escalaMax = 5f;   // evita que todo se vea gigante
+                // control de escala
+                float escalaMax = 5f;
+
                 escala = Math.Min(escala, escalaMax);
 
-                // ajuste visual (opcional pero recomendado)
                 escala *= 0.8f;
 
-                // Aplicar escala
+                // aplicar escala
                 float w = wReal * escala;
+
                 float h = hReal * escala;
 
-                // CENTRADO
-                float x = (pnlGrafico.Width - w) / 2;
-                float y = (pnlGrafico.Height - h) / 2;
+                // centrado con traslacion
+                float x =
+                    ((pnlGrafico.Width - w) / 2)
+                    + moverFigura.X;
 
-                // Dibujar
+                float y =
+                    ((pnlGrafico.Height - h) / 2)
+                    + moverFigura.Y;
+
+                // dibujar
                 g.FillRectangle(brocha, x, y, w, h);
+
                 g.DrawRectangle(lapiz, x, y, w, h);
 
                 lapiz.Dispose();
+
                 brocha.Dispose();
             }
         }
+
         private void pnlGrafico_Resize(object sender, EventArgs e)
         {
             pnlGrafico.Invalidate();
         }
-
     }
 }
-
