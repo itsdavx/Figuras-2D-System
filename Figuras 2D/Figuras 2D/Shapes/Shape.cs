@@ -5,12 +5,16 @@ namespace Figuras_2D.Shapes
     public abstract class Shape
     {
         public Pen Pen { get; set; }
+
         public Brush Brush { get; set; }
+
+        // ÁNGULO DE ROTACIÓN
         public float Rotation { get; set; } = 0;
 
         protected Shape(Pen pen, Brush brush)
         {
             Pen = pen;
+
             Brush = brush;
         }
 

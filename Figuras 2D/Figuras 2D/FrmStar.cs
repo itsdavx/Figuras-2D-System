@@ -1,8 +1,7 @@
-﻿using Figuras_2D.Shapes;
-using Figuras_2D.Transformaciones;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Figuras_2D.Shapes;
 
 namespace Figuras_2D
 {
@@ -11,46 +10,96 @@ namespace Figuras_2D
         private static FrmStar instancia;
 
         private Star star;
-        private Rotate rotate;
+
         private FrmStar()
         {
             InitializeComponent();
+
             btnGraficar.Click += btnGraficar_Click;
+
             PanelGrafico.Paint += PanelGrafico_Paint;
+
+            // ACTIVAR TECLADO
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmStar_KeyDown;
         }
 
         public static FrmStar Instancia
         {
             get
             {
-                if (instancia == null || instancia.IsDisposed)
+                if (
+                    instancia == null
+                    || instancia.IsDisposed
+                )
                 {
                     instancia = new FrmStar();
                 }
+
                 return instancia;
             }
         }
 
-        private void btnGraficar_Click(object sender, EventArgs e)
+        private void FrmStar_KeyDown(
+            object sender,
+            KeyEventArgs e
+        )
         {
-            if (!Validar(out float tamanoCm))
+            if (star == null)
                 return;
 
-            int tamanoPx = (int)(tamanoCm * 58f);
+            // A = IZQUIERDA
+            if (e.KeyCode == Keys.A)
+            {
+                star.Rotation -= 5;
+            }
 
-            PanelGrafico.Width = (tamanoPx * 2) + 20;
-            PanelGrafico.Height = (tamanoPx * 2) + 20;
-
-            int x = 10;
-            int y = 10;
-
-            star = new Star( x, y, tamanoPx, new Pen(Color.Black, 2), new SolidBrush(Color.Cyan));
-            rotate = new Rotate(star, PanelGrafico, this);
+            // D = DERECHA
+            if (e.KeyCode == Keys.D)
+            {
+                star.Rotation += 5;
+            }
 
             PanelGrafico.Invalidate();
         }
 
-        private void PanelGrafico_Paint(object sender, PaintEventArgs e)
+        private void btnGraficar_Click(
+            object sender,
+            EventArgs e
+        )
+        {
+            if (!Validar(out float tamanoCm))
+                return;
+
+            int tamanoPx =
+                (int)(tamanoCm * 58f);
+
+            PanelGrafico.Width =
+                (tamanoPx * 2) + 20;
+
+            PanelGrafico.Height =
+                (tamanoPx * 2) + 20;
+
+            int x = 10;
+
+            int y = 10;
+
+            star = new Star(
+                x,
+                y,
+                tamanoPx,
+                new Pen(Color.Black, 2),
+                new SolidBrush(Color.Cyan)
+            );
+
+            PanelGrafico.Invalidate();
+        }
+
+        private void PanelGrafico_Paint(
+            object sender,
+            PaintEventArgs e
+        )
         {
             if (star != null)
             {
@@ -62,24 +111,40 @@ namespace Figuras_2D
         {
             tamano = 0;
 
-            string input = txtTamano.Text.Trim();
+            string input =
+                txtTamano.Text.Trim();
 
             if (string.IsNullOrEmpty(input))
             {
-                MessageBox.Show("El campo no puede estar vacío");
+                MessageBox.Show(
+                    "El campo no puede estar vacío"
+                );
+
                 return false;
             }
 
-            if (!float.TryParse(input, System.Globalization.NumberStyles.Float,
-                System.Globalization.CultureInfo.InvariantCulture, out tamano))
+            if (
+                !float.TryParse(
+                    input,
+                    System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    out tamano
+                )
+            )
             {
-                MessageBox.Show("Ingrese un número válido (use punto para decimales)");
+                MessageBox.Show(
+                    "Ingrese un número válido"
+                );
+
                 return false;
             }
 
             if (tamano <= 0)
             {
-                MessageBox.Show("El valor debe ser mayor que 0");
+                MessageBox.Show(
+                    "El valor debe ser mayor que 0"
+                );
+
                 return false;
             }
 

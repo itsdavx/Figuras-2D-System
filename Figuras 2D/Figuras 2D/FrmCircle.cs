@@ -46,17 +46,35 @@ namespace Figuras_2D
         }
 
         // EVENTO DEL TECLADO
-        private void FrmCircle_KeyDown(object sender, KeyEventArgs e)
+        private void FrmCircle_KeyDown(
+    object sender,
+    KeyEventArgs e
+)
         {
             moverFigura.Mover(e);
 
             if (circulo != null)
             {
-                float radioCm = float.Parse(txtRadio.Text);
+                // ROTACIÓN
+                if (e.KeyCode == Keys.A)
+                {
+                    circulo.Rotation -= 5;
+                }
+
+                if (e.KeyCode == Keys.D)
+                {
+                    circulo.Rotation += 5;
+                }
+
+                float radioCm =
+                    float.Parse(txtRadio.Text);
 
                 float radioPx = radioCm * 58f;
 
-                int diametroPx = (int)(radioPx * 2);
+                int diametroPx =
+                    (int)(radioPx * 2);
+
+                float rotacionActual = circulo.Rotation;
 
                 circulo = new Circle(
                     10 + moverFigura.X,
@@ -65,6 +83,8 @@ namespace Figuras_2D
                     new Pen(Color.Black, 2),
                     new SolidBrush(Color.Green)
                 );
+
+                circulo.Rotation = rotacionActual;
             }
 
             PanelGrafico.Invalidate();
