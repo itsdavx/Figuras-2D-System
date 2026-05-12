@@ -87,7 +87,7 @@
             // txtEje1
             // 
             this.txtEje1.Location = new System.Drawing.Point(174, 60);
-            this.txtEje1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEje1.Margin = new System.Windows.Forms.Padding(2);
             this.txtEje1.Name = "txtEje1";
             this.txtEje1.Size = new System.Drawing.Size(76, 20);
             this.txtEje1.TabIndex = 7;
@@ -95,7 +95,7 @@
             // txtEje2
             // 
             this.txtEje2.Location = new System.Drawing.Point(174, 84);
-            this.txtEje2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEje2.Margin = new System.Windows.Forms.Padding(2);
             this.txtEje2.Name = "txtEje2";
             this.txtEje2.Size = new System.Drawing.Size(76, 20);
             this.txtEje2.TabIndex = 8;
@@ -127,7 +127,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(385, 65);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(109, 32);
             this.btnGraficar.TabIndex = 11;
@@ -138,7 +138,7 @@
             // PanelGrafico
             // 
             this.PanelGrafico.Location = new System.Drawing.Point(44, 163);
-            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.PanelGrafico.Name = "PanelGrafico";
             this.PanelGrafico.Size = new System.Drawing.Size(0, 0);
             this.PanelGrafico.TabIndex = 12;
@@ -159,10 +159,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEllipse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ellipse";
+            this.Load += new System.EventHandler(this.FrmEllipse_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -52,7 +52,7 @@
             // 
             this.panelGrafico.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelGrafico.Location = new System.Drawing.Point(23, 117);
-            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.panelGrafico.Name = "panelGrafico";
             this.panelGrafico.Size = new System.Drawing.Size(633, 391);
             this.panelGrafico.TabIndex = 12;
@@ -74,7 +74,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(276, 42);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(92, 32);
             this.btnGraficar.TabIndex = 10;
@@ -96,7 +96,7 @@
             // txtTamano
             // 
             this.txtTamano.Location = new System.Drawing.Point(100, 54);
-            this.txtTamano.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTamano.Margin = new System.Windows.Forms.Padding(2);
             this.txtTamano.Name = "txtTamano";
             this.txtTamano.Size = new System.Drawing.Size(68, 20);
             this.txtTamano.TabIndex = 8;
@@ -128,6 +128,7 @@
             this.Name = "FrmCross";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cross";
+            this.Load += new System.EventHandler(this.FrmCross_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

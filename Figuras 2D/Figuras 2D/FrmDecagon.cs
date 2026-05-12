@@ -7,18 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Figuras_2D.Transformaciones;
 
 namespace Figuras_2D
 {
     public partial class FrmDecagon : Form
-
     {
-        private double ladoDibujo = 0; // Variable para almacenar el lado para el dibujo
+        private double ladoDibujo = 0;
+
         private static FrmDecagon instancia;
+
+        private Traslation moverFigura;
+
         public FrmDecagon()
         {
             InitializeComponent();
+
+            moverFigura = new Traslation(0, 0);
+
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmDecagon_KeyDown;
         }
+
         public static FrmDecagon Instancia
         {
             get
@@ -27,60 +38,78 @@ namespace Figuras_2D
                 {
                     instancia = new FrmDecagon();
                 }
+
                 return instancia;
             }
+        }
+
+        private void FrmDecagon_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            pnlGrafico.Invalidate();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             double lado, perimetro, area;
 
-            // Validar campo vacío
+            // validar campo vacio
             if (txtLado.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el valor del lado.",
                                 "Dato requerido",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
+
                 txtLado.Focus();
+
                 return;
             }
 
-            // Validar número
+            // validar numero
             if (!double.TryParse(txtLado.Text, out lado))
             {
-                MessageBox.Show("Ingrese solo números válidos.",
+                MessageBox.Show("Ingrese solo numeros validos.",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
+
                 txtLado.Clear();
+
                 txtLado.Focus();
+
                 return;
             }
 
-            // Validar positivo
+            // validar positivo
             if (lado <= 0)
             {
                 MessageBox.Show("El lado debe ser mayor que cero.",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
+
                 txtLado.Focus();
+
                 return;
             }
 
-            // Cálculos
+            // calculos
             perimetro = 10 * lado;
-            area = (10 * Math.Pow(lado, 2)) / (4 * Math.Tan(Math.PI / 10));
 
-            // Mostrar resultados
+            area = (10 * Math.Pow(lado, 2)) /
+                   (4 * Math.Tan(Math.PI / 10));
+
+            // mostrar resultados
             txtPerimetro.Text = perimetro.ToString("N2");
+
             txtArea.Text = area.ToString("N2");
 
-            // Guardar para dibujo
+            // guardar para dibujo
             ladoDibujo = lado;
 
-            // Dibujar
+            // dibujar
             pnlGrafico.Invalidate();
         }
 
@@ -89,37 +118,51 @@ namespace Figuras_2D
             if (ladoDibujo > 0)
             {
                 Graphics g = e.Graphics;
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                g.SmoothingMode =
+                    System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
                 Pen lapiz = new Pen(Color.Blue, 2);
-                SolidBrush brocha = new SolidBrush(Color.FromArgb(120, Color.LightBlue));
+
+                SolidBrush brocha =
+                    new SolidBrush(Color.FromArgb(120, Color.LightBlue));
 
                 int lados = 10;
+
                 PointF[] puntos = new PointF[lados];
 
                 float margen = 20;
+
                 float panelW = pnlGrafico.Width - 2 * margen;
+
                 float panelH = pnlGrafico.Height - 2 * margen;
 
-                // RADIO BASADO EN EL LADO REAL
-                // Fórmula del radio de un polígono regular:
-                float radioReal = (float)(ladoDibujo / (2 * Math.Sin(Math.PI / lados)));
+                // radio basado en el lado real
+                float radioReal =
+                    (float)(ladoDibujo /
+                    (2 * Math.Sin(Math.PI / lados)));
 
-                // ESCALA PARA QUE QUEPA EN EL PANEL
-                float escala = Math.Min(panelW, panelH) / (2 * radioReal);
+                // escala para que quepa en el panel
+                float escala =
+                    Math.Min(panelW, panelH) / (2 * radioReal);
 
-                // Limitar escala para que no se vea exagerado
+                // limitar escala
                 escala = Math.Min(escala, 5f);
+
                 escala *= 0.9f;
 
                 float radio = radioReal * escala;
 
-                float centroX = pnlGrafico.Width / 2;
-                float centroY = pnlGrafico.Height / 2;
+                float centroX =
+                    (pnlGrafico.Width / 2) + moverFigura.X;
+
+                float centroY =
+                    (pnlGrafico.Height / 2) + moverFigura.Y;
 
                 for (int i = 0; i < lados; i++)
                 {
-                    double angulo = (2 * Math.PI * i / lados) - Math.PI / 2;
+                    double angulo =
+                        (2 * Math.PI * i / lados) - Math.PI / 2;
 
                     puntos[i] = new PointF(
                         centroX + radio * (float)Math.Cos(angulo),
@@ -128,27 +171,31 @@ namespace Figuras_2D
                 }
 
                 g.FillPolygon(brocha, puntos);
+
                 g.DrawPolygon(lapiz, puntos);
 
                 lapiz.Dispose();
+
                 brocha.Dispose();
             }
         }
 
         private void btnResetear_Click(object sender, EventArgs e)
         {
-            // Reiniciar variable global
+            // reiniciar variable
             ladoDibujo = 0;
 
-            // Limpiar cajas
+            // limpiar cajas
             txtLado.Clear();
+
             txtPerimetro.Clear();
+
             txtArea.Clear();
 
-            // Limpiar gráfico
+            // limpiar grafico
             pnlGrafico.Refresh();
 
-            // Cursor al inicio
+            // cursor al inicio
             txtLado.Focus();
         }
 
@@ -159,7 +206,7 @@ namespace Figuras_2D
 
         private void FrmDecagon_Load(object sender, EventArgs e)
         {
-
+            this.Focus();
         }
     }
 }
