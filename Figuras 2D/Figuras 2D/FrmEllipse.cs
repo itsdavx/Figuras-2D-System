@@ -48,10 +48,26 @@ namespace Figuras_2D
         // mover figura con teclado
         private void FrmEllipse_KeyDown(object sender, KeyEventArgs e)
         {
+            // MOVER
             moverFigura.Mover(e);
 
             if (elipse != null)
             {
+                // GUARDAR ROTACIÓN ACTUAL
+                float rotacionActual = elipse.Rotation;
+
+                // ROTAR IZQUIERDA
+                if (e.KeyCode == Keys.A)
+                {
+                    rotacionActual -= 5;
+                }
+
+                // ROTAR DERECHA
+                if (e.KeyCode == Keys.D)
+                {
+                    rotacionActual += 5;
+                }
+
                 float eje1Cm = float.Parse(txtEje1.Text);
 
                 float eje2Cm = float.Parse(txtEje2.Text);
@@ -72,6 +88,9 @@ namespace Figuras_2D
                     new Pen(Color.Black, 2),
                     new SolidBrush(Color.Purple)
                 );
+
+                // RECUPERAR ROTACIÓN
+                elipse.Rotation = rotacionActual;
             }
 
             PanelGrafico.Invalidate();
