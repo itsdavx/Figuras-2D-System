@@ -58,7 +58,7 @@
             // 
             this.panelGrafico.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelGrafico.Location = new System.Drawing.Point(19, 160);
-            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.panelGrafico.Name = "panelGrafico";
             this.panelGrafico.Size = new System.Drawing.Size(633, 391);
             this.panelGrafico.TabIndex = 19;
@@ -80,7 +80,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(315, 65);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(101, 39);
             this.btnGraficar.TabIndex = 17;
@@ -102,7 +102,7 @@
             // txtLado1
             // 
             this.txtLado1.Location = new System.Drawing.Point(109, 48);
-            this.txtLado1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLado1.Margin = new System.Windows.Forms.Padding(2);
             this.txtLado1.Name = "txtLado1";
             this.txtLado1.Size = new System.Drawing.Size(68, 20);
             this.txtLado1.TabIndex = 15;
@@ -132,7 +132,7 @@
             // txtLado2
             // 
             this.txtLado2.Location = new System.Drawing.Point(109, 76);
-            this.txtLado2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLado2.Margin = new System.Windows.Forms.Padding(2);
             this.txtLado2.Name = "txtLado2";
             this.txtLado2.Size = new System.Drawing.Size(68, 20);
             this.txtLado2.TabIndex = 22;
@@ -162,7 +162,7 @@
             // txtLado3
             // 
             this.txtLado3.Location = new System.Drawing.Point(109, 102);
-            this.txtLado3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLado3.Margin = new System.Windows.Forms.Padding(2);
             this.txtLado3.Name = "txtLado3";
             this.txtLado3.Size = new System.Drawing.Size(68, 20);
             this.txtLado3.TabIndex = 25;
@@ -200,6 +200,7 @@
             this.Name = "FrmTriangle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Triangle";
+            this.Load += new System.EventHandler(this.FrmTriangle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

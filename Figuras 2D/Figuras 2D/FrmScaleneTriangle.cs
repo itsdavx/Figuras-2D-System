@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,20 @@ namespace Figuras_2D
         private double ladoBDibujo = 0;
         private double ladoCDibujo = 0;
 
+        // TRASLACION
+        private Traslation moverFigura = new Traslation(0, 0);
+
         private static FrmScaleneTriangle instancia;
 
         public FrmScaleneTriangle()
         {
             InitializeComponent();
+
+            // ACTIVAR TECLADO
+            this.KeyPreview = true;
+
+            // EVENTO TECLADO
+            this.KeyDown += FrmScaleneTriangle_KeyDown;
         }
 
         public static FrmScaleneTriangle Instancia
@@ -35,6 +45,14 @@ namespace Figuras_2D
             }
         }
 
+        // MOVIMIENTO CON TECLAS
+        private void FrmScaleneTriangle_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            pnlGrafico.Invalidate();
+        }
+
         private void lblLadoB_Click(object sender, EventArgs e)
         {
             // Se mantiene aunque no haga nada
@@ -42,7 +60,7 @@ namespace Figuras_2D
 
         private void FrmScaleneTriangle_Load(object sender, EventArgs e)
         {
-            
+            this.Focus();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -119,7 +137,7 @@ namespace Figuras_2D
                 float panelW = pnlGrafico.Width - 2 * margen;
                 float panelH = pnlGrafico.Height - 2 * margen;
 
-                //  Ordenar lados
+                // Ordenar lados
                 double[] lados = { ladoADibujo, ladoBDibujo, ladoCDibujo };
                 Array.Sort(lados);
 
@@ -136,7 +154,7 @@ namespace Figuras_2D
 
                 if (temp < 0)
                 {
-                    return; // evita error de raíz negativa
+                    return;
                 }
 
                 float y3 = (float)Math.Sqrt(temp);
@@ -160,8 +178,9 @@ namespace Figuras_2D
                 x2 *= escala; y2 *= escala;
                 x3 *= escala; y3 *= escala;
 
-                float centroX = pnlGrafico.Width / 2;
-                float centroY = pnlGrafico.Height / 2;
+                // CENTRO + TRASLACION
+                float centroX = (pnlGrafico.Width / 2) + moverFigura.X;
+                float centroY = (pnlGrafico.Height / 2) + moverFigura.Y;
 
                 PointF p1 = new PointF(centroX + x1, centroY - y1);
                 PointF p2 = new PointF(centroX + x2, centroY - y2);
@@ -182,6 +201,9 @@ namespace Figuras_2D
             ladoADibujo = 0;
             ladoBDibujo = 0;
             ladoCDibujo = 0;
+
+            // REINICIAR TRASLACION
+            moverFigura = new Traslation(0, 0);
 
             txtLadoA.Clear();
             txtLadoB.Clear();

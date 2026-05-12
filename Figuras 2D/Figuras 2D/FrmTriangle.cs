@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,17 @@ namespace Figuras_2D
     public partial class FrmTriangle : Form
     {
         private static FrmTriangle instancia;
+
+        // CLASE DE TRASLACIÓN
+        Traslation moverFigura = new Traslation(0, 0);
+
         public FrmTriangle()
         {
             InitializeComponent();
+
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmTriangle_KeyDown;
         }
 
         public static FrmTriangle Instancia
@@ -60,9 +69,24 @@ namespace Figuras_2D
             return true;
         }
 
-        
+
         bool dibujar = false;
         private float lado1, lado2, lado3;
+
+        private void FrmTriangle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!dibujar)
+                return;
+
+            moverFigura.Mover(e);
+
+            panelGrafico.Invalidate();
+        }
+
+        private void FrmTriangle_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnGraficar_Click(object sender, EventArgs e)
         {
@@ -99,7 +123,10 @@ namespace Figuras_2D
             b *= escala;
             c *= escala;
 
-            PointF A = new PointF(margen, panelGrafico.Height - margen);
+            PointF A = new PointF(
+                margen + moverFigura.X,
+                panelGrafico.Height - margen + moverFigura.Y
+            );
 
             PointF B = new PointF(A.X + c, A.Y);
 

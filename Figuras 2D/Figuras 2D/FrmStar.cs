@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Figuras_2D.Shapes;
+using Figuras_2D.Transformaciones;
 
 namespace Figuras_2D
 {
@@ -10,6 +11,9 @@ namespace Figuras_2D
         private static FrmStar instancia;
 
         private Star star;
+
+        // CLASE DE TRASLACIÓN
+        Traslation moverFigura = new Traslation(0, 0);
 
         private FrmStar()
         {
@@ -49,6 +53,9 @@ namespace Figuras_2D
             if (star == null)
                 return;
 
+            // TRASLACIÓN
+            moverFigura.Mover(e);
+
             // A = IZQUIERDA
             if (e.KeyCode == Keys.A)
             {
@@ -60,6 +67,10 @@ namespace Figuras_2D
             {
                 star.Rotation += 5;
             }
+
+            // ACTUALIZAR POSICIÓN
+            star.X = 10 + moverFigura.X;
+            star.Y = 10 + moverFigura.Y;
 
             PanelGrafico.Invalidate();
         }
@@ -81,9 +92,9 @@ namespace Figuras_2D
             PanelGrafico.Height =
                 (tamanoPx * 2) + 20;
 
-            int x = 10;
+            int x = 10 + moverFigura.X;
 
-            int y = 10;
+            int y = 10 + moverFigura.Y;
 
             star = new Star(
                 x,
@@ -149,6 +160,11 @@ namespace Figuras_2D
             }
 
             return true;
+        }
+
+        private void FrmStar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

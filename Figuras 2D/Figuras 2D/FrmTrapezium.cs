@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,16 @@ namespace Figuras_2D
         private double baseMenorDibujo = 0;
         private double alturaDibujo = 0;
 
+        // Clase de traslación
+        Traslation moverFigura = new Traslation(0, 0);
+
         public FrmTrapezium()
         {
             InitializeComponent();
+
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmTrapezium_KeyDown;
         }
 
         public static FrmTrapezium Instancia
@@ -34,7 +42,14 @@ namespace Figuras_2D
                 return instancia;
             }
         }
-        
+
+        private void FrmTrapezium_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            pnlGrafico.Invalidate();
+        }
+
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             double baseMayor, baseMenor, altura;
@@ -65,7 +80,7 @@ namespace Figuras_2D
             }
 
             // Validar positivos
-            if (baseMayor <= 0 || baseMenor <= 0 || altura <= 0 )
+            if (baseMayor <= 0 || baseMenor <= 0 || altura <= 0)
             {
                 MessageBox.Show("Todos los valores deben ser mayores que cero.",
                                 "Error",
@@ -86,7 +101,7 @@ namespace Figuras_2D
             }
 
             // Cálculos
-            perimetro = baseMayor + baseMenor ;
+            perimetro = baseMayor + baseMenor;
             area = ((baseMayor + baseMenor) * altura) / 2;
 
             txtPerimetro.Text = perimetro.ToString("N2");
@@ -131,8 +146,8 @@ namespace Figuras_2D
                 float hesc = h * escala;
 
                 // CENTRADO
-                float x = (pnlGrafico.Width - Besc) / 2;
-                float y = (pnlGrafico.Height + hesc) / 2;
+                float x = ((pnlGrafico.Width - Besc) / 2) + moverFigura.X;
+                float y = ((pnlGrafico.Height + hesc) / 2) + moverFigura.Y;
 
                 float diferencia = (Besc - besc) / 2;
 

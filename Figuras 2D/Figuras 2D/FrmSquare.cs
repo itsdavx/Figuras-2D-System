@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,19 @@ namespace Figuras_2D
     public partial class FrmSquare : Form
     {
         private static FrmSquare instancia;
+
+        // TRASLACION
+        private Traslation moverFigura = new Traslation(0, 0);
+
         public FrmSquare()
         {
             InitializeComponent();
+
+            // ACTIVAR TECLADO
+            this.KeyPreview = true;
+
+            // EVENTO TECLADO
+            this.KeyDown += FrmSquare_KeyDown;
         }
 
         public static FrmSquare Instancia
@@ -28,6 +39,14 @@ namespace Figuras_2D
                 }
                 return instancia;
             }
+        }
+
+        // MOVIMIENTO CON FLECHAS
+        private void FrmSquare_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            panelGrafico.Invalidate();
         }
 
         private bool Validar(out float tamano)
@@ -89,8 +108,9 @@ namespace Figuras_2D
 
             int lado = tamanoPx;
 
-            int x = (panelGrafico.Width - lado) / 2;
-            int y = (panelGrafico.Height - lado) / 2;
+            // CENTRADO + TRASLACION
+            int x = ((panelGrafico.Width - lado) / 2) + moverFigura.X;
+            int y = ((panelGrafico.Height - lado) / 2) + moverFigura.Y;
 
             Brush brocha = new SolidBrush(Color.LightBlue);
 
@@ -99,7 +119,11 @@ namespace Figuras_2D
             g.FillRectangle(brocha, x, y, lado, lado);
 
             g.DrawRectangle(lapiz, x, y, lado, lado);
+        }
 
+        private void FrmSquare_Load(object sender, EventArgs e)
+        {
+            this.Focus();
         }
     }
 }

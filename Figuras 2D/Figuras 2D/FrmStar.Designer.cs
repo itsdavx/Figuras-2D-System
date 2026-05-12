@@ -40,7 +40,7 @@
             // PanelGrafico
             // 
             this.PanelGrafico.Location = new System.Drawing.Point(24, 119);
-            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.PanelGrafico.Name = "PanelGrafico";
             this.PanelGrafico.Size = new System.Drawing.Size(0, 0);
             this.PanelGrafico.TabIndex = 30;
@@ -50,7 +50,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(278, 52);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(82, 30);
             this.btnGraficar.TabIndex = 29;
@@ -71,7 +71,7 @@
             // txtTamano
             // 
             this.txtTamano.Location = new System.Drawing.Point(150, 57);
-            this.txtTamano.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTamano.Margin = new System.Windows.Forms.Padding(2);
             this.txtTamano.Name = "txtTamano";
             this.txtTamano.Size = new System.Drawing.Size(53, 20);
             this.txtTamano.TabIndex = 27;
@@ -125,6 +125,7 @@
             this.Name = "FrmStar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Star";
+            this.Load += new System.EventHandler(this.FrmStar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
