@@ -103,7 +103,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(322, 69);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(89, 36);
             this.btnGraficar.TabIndex = 8;
@@ -113,7 +113,7 @@
             // txtBase
             // 
             this.txtBase.Location = new System.Drawing.Point(189, 50);
-            this.txtBase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBase.Margin = new System.Windows.Forms.Padding(2);
             this.txtBase.Name = "txtBase";
             this.txtBase.Size = new System.Drawing.Size(40, 20);
             this.txtBase.TabIndex = 9;
@@ -121,7 +121,7 @@
             // txtAltura
             // 
             this.txtAltura.Location = new System.Drawing.Point(189, 77);
-            this.txtAltura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAltura.Margin = new System.Windows.Forms.Padding(2);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(40, 20);
             this.txtAltura.TabIndex = 10;
@@ -129,7 +129,7 @@
             // txtOffset
             // 
             this.txtOffset.Location = new System.Drawing.Point(189, 104);
-            this.txtOffset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOffset.Margin = new System.Windows.Forms.Padding(2);
             this.txtOffset.Name = "txtOffset";
             this.txtOffset.Size = new System.Drawing.Size(40, 20);
             this.txtOffset.TabIndex = 11;
@@ -170,7 +170,7 @@
             // PanelGrafico
             // 
             this.PanelGrafico.Location = new System.Drawing.Point(26, 178);
-            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.PanelGrafico.Name = "PanelGrafico";
             this.PanelGrafico.Size = new System.Drawing.Size(0, 0);
             this.PanelGrafico.TabIndex = 15;
@@ -197,6 +197,7 @@
             this.Name = "FrmParallelogram";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Parallelogram";
+            this.Load += new System.EventHandler(this.FrmParallelogram_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

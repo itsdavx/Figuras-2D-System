@@ -15,6 +15,10 @@ namespace Figuras_2D
     public partial class FrmKite : Form
     {
         private static FrmKite instancia;
+
+        // clase de traslacion
+        Traslation moverFigura = new Traslation(0, 0);
+
         public FrmKite()
         {
             InitializeComponent();
@@ -37,12 +41,15 @@ namespace Figuras_2D
         }
 
         // Evento del teclado
-        private void FrmKite_KeyDown( object sender, KeyEventArgs e)
+        private void FrmKite_KeyDown(object sender, KeyEventArgs e)
         {
             if (!dibujar)
                 return;
 
             zoom.AplicarZoom(e);
+
+            // mover con flechas
+            moverFigura.Mover(e);
 
             panelGrafico.Invalidate();
         }
@@ -51,7 +58,6 @@ namespace Figuras_2D
         bool dibujar = false;
 
         Zoom zoom = new Zoom();
-
 
         private void panelGrafico_Paint(object sender, PaintEventArgs e)
         {
@@ -75,22 +81,22 @@ namespace Figuras_2D
 
             PointF[] puntos = new PointF[]
             {
-                new PointF(x + d2Px / 2, y),
+                new PointF(x + d2Px / 2 + moverFigura.X, y + moverFigura.Y),
 
-                new PointF(x + d2Px, y + arriba),
+                new PointF(x + d2Px + moverFigura.X, y + arriba + moverFigura.Y),
 
-                new PointF(x + d2Px / 2, y + alturaTotal),
+                new PointF(x + d2Px / 2 + moverFigura.X, y + alturaTotal + moverFigura.Y),
 
-                new PointF(x, y + arriba)
+                new PointF(x + moverFigura.X, y + arriba + moverFigura.Y)
             };
 
             PointF centro = new PointF(
-                x + d2Px / 2,
-                y + alturaTotal / 2
+                x + d2Px / 2 + moverFigura.X,
+                y + alturaTotal / 2 + moverFigura.Y
             );
 
             PointF[] escalados =
-    new PointF[puntos.Length];
+                new PointF[puntos.Length];
 
             for (int i = 0; i < puntos.Length; i++)
             {
@@ -107,7 +113,6 @@ namespace Figuras_2D
                 escalados[i] =
                     new PointF(nuevoX, nuevoY);
             }
-
 
             g.FillPolygon(
               Brushes.MediumPurple,
@@ -133,7 +138,7 @@ namespace Figuras_2D
                 MessageBox.Show("Ambos campos son obligatorios");
                 return false;
             }
-                       
+
             if (!float.TryParse(input1, System.Globalization.NumberStyles.Float,
                 System.Globalization.CultureInfo.InvariantCulture, out d1))
             {
@@ -153,7 +158,7 @@ namespace Figuras_2D
                 MessageBox.Show("Los valores deben ser mayores que 0");
                 return false;
             }
-                        
+
             if (d2 >= d1)
             {
                 MessageBox.Show("La diagonal menor debe ser menor que la mayor");
@@ -173,7 +178,14 @@ namespace Figuras_2D
         {
             zoom.AplicarZoom(e);
 
+            moverFigura.Mover(e);
+
             panelGrafico.Invalidate();
+        }
+
+        private void FrmKite_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnGraficar_Click(object sender, EventArgs e)

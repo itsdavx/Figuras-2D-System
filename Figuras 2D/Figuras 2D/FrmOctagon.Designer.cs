@@ -52,7 +52,7 @@
             // 
             this.panelGrafico.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelGrafico.Location = new System.Drawing.Point(7, 102);
-            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.panelGrafico.Name = "panelGrafico";
             this.panelGrafico.Size = new System.Drawing.Size(633, 391);
             this.panelGrafico.TabIndex = 33;
@@ -75,7 +75,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(239, 30);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(95, 30);
             this.btnGraficar.TabIndex = 31;
@@ -97,7 +97,7 @@
             // txtLado
             // 
             this.txtLado.Location = new System.Drawing.Point(64, 37);
-            this.txtLado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLado.Margin = new System.Windows.Forms.Padding(2);
             this.txtLado.Name = "txtLado";
             this.txtLado.Size = new System.Drawing.Size(68, 20);
             this.txtLado.TabIndex = 29;
@@ -130,6 +130,7 @@
             this.Name = "FrmOctagon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Octagon";
+            this.Load += new System.EventHandler(this.FrmOctagon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

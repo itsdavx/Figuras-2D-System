@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,22 @@ namespace Figuras_2D
 {
     public partial class FrmNonagon : Form
     {
-        private double ladoDibujo = 0; // Variable para almacenar el lado para el dibujo
+        private double ladoDibujo = 0;
+
         private static FrmNonagon instancia;
+
+        // clase de traslacion
+        Traslation moverFigura = new Traslation(0, 0);
+
         public FrmNonagon()
         {
             InitializeComponent();
+
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmNonagon_KeyDown;
         }
+
         public static FrmNonagon Instancia
         {
             get
@@ -28,6 +39,14 @@ namespace Figuras_2D
                 }
                 return instancia;
             }
+        }
+
+        // mover figura con teclado
+        private void FrmNonagon_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            pnlGrafico.Invalidate();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -44,14 +63,14 @@ namespace Figuras_2D
                 return;
             }
 
-            // Fórmulas
+            // formulas
             perimetro = 9 * lado;
             area = (9 * Math.Pow(lado, 2)) / (4 * Math.Tan(Math.PI / 9));
 
             txtPerimetro.Text = perimetro.ToString("N2");
             txtArea.Text = area.ToString("N2");
 
-            // Guardar para dibujo
+            // guardar para dibujo
             ladoDibujo = lado;
 
             pnlGrafico.Invalidate();
@@ -82,13 +101,13 @@ namespace Figuras_2D
 
                 float ladoReal = (float)ladoDibujo;
 
-                // CALCULAR RADIO BASE (relación lado-radio de un polígono regular)
+                // calcular radio base
                 float radioBase = ladoReal / (2 * (float)Math.Sin(Math.PI / lados));
 
-                // ESCALA AUTOMÁTICA
+                // escala automatica
                 float escala = Math.Min(panelW / (2 * radioBase), panelH / (2 * radioBase));
 
-                // CONTROL PARA QUE NO TODO SE VEA IGUAL
+                // control de escala
                 float escalaMax = 5f;
                 escala = Math.Min(escala, escalaMax);
 
@@ -96,8 +115,8 @@ namespace Figuras_2D
 
                 float radio = radioBase * escala;
 
-                float centroX = pnlGrafico.Width / 2;
-                float centroY = pnlGrafico.Height / 2;
+                float centroX = pnlGrafico.Width / 2 + moverFigura.X;
+                float centroY = pnlGrafico.Height / 2 + moverFigura.Y;
 
                 for (int i = 0; i < lados; i++)
                 {
@@ -119,18 +138,20 @@ namespace Figuras_2D
 
         private void btnResetear_Click(object sender, EventArgs e)
         {
-            // Reiniciar variable global
+            // reiniciar variable
             ladoDibujo = 0;
 
-            // Limpiar cajas de texto
+            // limpiar cajas
             txtLado.Clear();
             txtPerimetro.Clear();
             txtArea.Clear();
 
-            // Limpiar panel gráfico
+            // limpiar panel
             pnlGrafico.Refresh();
 
-            // Colocar cursor en el primer campo
+            // regresar posicion
+            moverFigura = new Traslation(0, 0);
+
             txtLado.Focus();
         }
 
@@ -141,7 +162,7 @@ namespace Figuras_2D
 
         private void FrmNonagon_Load(object sender, EventArgs e)
         {
-
+            this.Focus();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +15,19 @@ namespace Figuras_2D
     public partial class FrmOval : Form
     {
         private static FrmOval _instancia;
+
+        // clase de traslacion
+        Traslation moverFigura = new Traslation(0, 0);
+
         public FrmOval()
         {
             InitializeComponent();
+
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmOval_KeyDown;
         }
-        
+
         public static FrmOval Instancia
         {
             get
@@ -31,8 +40,16 @@ namespace Figuras_2D
             }
         }
 
-        float hCm = 0f;   // altura
-        float wCm = 0f;   // ancho
+        // mover figura con teclado
+        private void FrmOval_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            panelGrafico.Invalidate();
+        }
+
+        float hCm = 0f;
+        float wCm = 0f;
         bool dibujar = false;
 
         private bool ValidarHuevo(out float h, out float w)
@@ -43,7 +60,7 @@ namespace Figuras_2D
             string inputH = txtAltura.Text.Trim();
             string inputW = txtAnchura.Text.Trim();
 
-            // 🔴 campos vacíos
+            // campos vacios
             if (string.IsNullOrEmpty(inputH) || string.IsNullOrEmpty(inputW))
             {
                 MessageBox.Show("Debe ingresar altura y anchura");
@@ -103,70 +120,79 @@ namespace Figuras_2D
             panelGrafico.Height = hPx + 40;
 
             panelGrafico.Invalidate();
-
         }
 
         private void panelGrafico_Paint(object sender, PaintEventArgs e)
         {
             if (!dibujar) return;
+
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
 
             float h = hCm * 58f;
             float w = wCm * 58f;
 
-            float centerX = panelGrafico.Width / 2f;
-            float centerY = panelGrafico.Height / 2f;
-                       
+            float centerX = panelGrafico.Width / 2f + moverFigura.X;
+            float centerY = panelGrafico.Height / 2f + moverFigura.Y;
+
             float radioCirculo = w / 2f;
 
             float circuloCenterY = centerY + (h / 2f) - radioCirculo;
 
-
             float elipseTop = centerY - h / 2f;
-            float unionY = circuloCenterY; 
-            float elipseH = (unionY - elipseTop) * 2f; 
+            float unionY = circuloCenterY;
+            float elipseH = (unionY - elipseTop) * 2f;
 
             using (GraphicsPath path = new GraphicsPath())
             {
-
                 path.AddArc(centerX - w / 2f, elipseTop, w, elipseH, 180, 180);
-                                
+
                 path.AddArc(centerX - radioCirculo, circuloCenterY - radioCirculo,
                             radioCirculo * 2, radioCirculo * 2, 0, 180);
 
                 path.CloseFigure();
 
-                
                 using (SolidBrush brush = new SolidBrush(Color.FromArgb(240, 150, 150)))
                     g.FillPath(brush, path);
 
-               
                 using (PathGradientBrush pgb = new PathGradientBrush(path))
                 {
                     pgb.CenterPoint = new PointF(centerX - w * 0.1f, centerY - h * 0.1f);
                     pgb.CenterColor = Color.FromArgb(255, 255, 230, 225);
                     pgb.SurroundColors = new Color[] { Color.FromArgb(0, 200, 100, 100) };
+
                     g.FillPath(pgb, path);
                 }
 
-                
                 using (Pen pen = new Pen(Color.FromArgb(45, 45, 65), 3))
                     g.DrawPath(pen, path);
             }
 
-            
             float brilloX = centerX - w * 0.28f;
             float brilloY = centerY - h * 0.28f;
+
             using (Pen penBrillo = new Pen(Color.FromArgb(90, 255, 255, 255), 2.2f))
             {
                 for (int i = 1; i <= 3; i++)
                 {
                     float r = i * (w * 0.07f);
-                    g.DrawArc(penBrillo, brilloX - r, brilloY - r, r * 2, r * 2, 190, 120);
+
+                    g.DrawArc(
+                        penBrillo,
+                        brilloX - r,
+                        brilloY - r,
+                        r * 2,
+                        r * 2,
+                        190,
+                        120
+                    );
                 }
             }
+        }
 
+        private void FrmOval_Load(object sender, EventArgs e)
+        {
+            this.Focus();
         }
     }
 }

@@ -73,7 +73,7 @@
             // txtLado
             // 
             this.txtLado.Location = new System.Drawing.Point(99, 50);
-            this.txtLado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLado.Margin = new System.Windows.Forms.Padding(2);
             this.txtLado.Name = "txtLado";
             this.txtLado.Size = new System.Drawing.Size(40, 20);
             this.txtLado.TabIndex = 10;
@@ -94,7 +94,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(230, 47);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(104, 33);
             this.btnGraficar.TabIndex = 14;
@@ -104,7 +104,7 @@
             // PanelGrafico
             // 
             this.PanelGrafico.Location = new System.Drawing.Point(22, 115);
-            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.PanelGrafico.Name = "PanelGrafico";
             this.PanelGrafico.Size = new System.Drawing.Size(0, 0);
             this.PanelGrafico.TabIndex = 16;
@@ -125,6 +125,7 @@
             this.Name = "FrmPentagon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pentagon";
+            this.Load += new System.EventHandler(this.FrmPentagon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

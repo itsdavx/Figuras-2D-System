@@ -55,7 +55,7 @@
             // 
             this.panelGrafico.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelGrafico.Location = new System.Drawing.Point(17, 144);
-            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGrafico.Margin = new System.Windows.Forms.Padding(2);
             this.panelGrafico.Name = "panelGrafico";
             this.panelGrafico.Size = new System.Drawing.Size(633, 391);
             this.panelGrafico.TabIndex = 19;
@@ -77,7 +77,7 @@
             this.btnGraficar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnGraficar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficar.Location = new System.Drawing.Point(277, 69);
-            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraficar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraficar.Name = "btnGraficar";
             this.btnGraficar.Size = new System.Drawing.Size(111, 32);
             this.btnGraficar.TabIndex = 17;
@@ -99,7 +99,7 @@
             // txtAltura
             // 
             this.txtAltura.Location = new System.Drawing.Point(107, 52);
-            this.txtAltura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAltura.Margin = new System.Windows.Forms.Padding(2);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(68, 20);
             this.txtAltura.TabIndex = 15;
@@ -129,7 +129,7 @@
             // txtAnchura
             // 
             this.txtAnchura.Location = new System.Drawing.Point(107, 81);
-            this.txtAnchura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAnchura.Margin = new System.Windows.Forms.Padding(2);
             this.txtAnchura.Name = "txtAnchura";
             this.txtAnchura.Size = new System.Drawing.Size(68, 20);
             this.txtAnchura.TabIndex = 22;
@@ -165,6 +165,7 @@
             this.Name = "FrmOval";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Oval";
+            this.Load += new System.EventHandler(this.FrmOval_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

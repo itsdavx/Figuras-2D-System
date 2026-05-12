@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Figuras_2D.Transformaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,19 @@ namespace Figuras_2D
     public partial class FrmOctagon : Form
     {
         private static FrmOctagon instancia;
+
+        // clase de traslacion
+        Traslation moverFigura = new Traslation(0, 0);
+
         public FrmOctagon()
         {
             InitializeComponent();
+
+            this.KeyPreview = true;
+
+            this.KeyDown += FrmOctagon_KeyDown;
         }
+
         public static FrmOctagon Instancia
         {
             get
@@ -27,6 +37,14 @@ namespace Figuras_2D
                 }
                 return instancia;
             }
+        }
+
+        // mover figura con teclado
+        private void FrmOctagon_KeyDown(object sender, KeyEventArgs e)
+        {
+            moverFigura.Mover(e);
+
+            panelGrafico.Invalidate();
         }
 
         private bool ValidarLado(out float lado)
@@ -72,6 +90,7 @@ namespace Figuras_2D
             panelGrafico.Height = (int)tamanoPx + 20;
 
             dibujar = true;
+
             panelGrafico.Invalidate();
         }
 
@@ -85,8 +104,8 @@ namespace Figuras_2D
 
             float R = (float)(ladoPx / (2 * Math.Sin(Math.PI / n)));
 
-            float cx = panelGrafico.Width / 2f;
-            float cy = panelGrafico.Height / 2f;
+            float cx = panelGrafico.Width / 2f + moverFigura.X;
+            float cy = panelGrafico.Height / 2f + moverFigura.Y;
 
             PointF[] puntos = new PointF[n];
 
@@ -118,6 +137,11 @@ namespace Figuras_2D
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmOctagon_Load(object sender, EventArgs e)
+        {
+            this.Focus();
         }
     }
 }
